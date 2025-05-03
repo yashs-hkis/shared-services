@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package user;
+
+service UserService {
+  rpc GetUser (GetUserRequest) returns (User);
+  rpc GetUserBlogs (GetUserBlogRequest) returns (User);
+}
+
+message GetUserRequest {
+  int32  id = 1;
+  string     startTime = 2;
+}
+
+message GetUserBlogRequest {
+  int32  id = 1;
+}
+
+message Blog {
+  string title = 1;
+}
+
+// Define the User message
+message User {
+  int32 id = 1;
+  string name = 2;
+  repeated Blog Blog = 3;
+}
