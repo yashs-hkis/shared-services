@@ -1,0 +1,51 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+  output          = "./generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  schemas  = ["user_schema", "vehicle_schema"]
+}
+
+// From user_schema
+model Customer {
+  id        String    @id @default(uuid())
+  email     String    @unique
+  name      String?
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  @@map("customers")
+  @@schema("user_schema")
+}
+
+// From vehicle schema
+model Vehicle {
+  id           String    @id @default(uuid())
+  typeId       String
+  licensePlate String    @unique
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+  deletedAt    DateTime? @map("deleted_at")
+
+  type VehicleType @relation(fields: [typeId], references: [id])
+
+  @@map("vehicles")
+  @@schema("vehicle_schema")
+}
+
+model VehicleType {
+  id        String    @id @default(uuid())
+  name      String    @unique
+  vehicles  Vehicle[]
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  @@map("vehicle_types")
+  @@schema("vehicle_schema")
+}
