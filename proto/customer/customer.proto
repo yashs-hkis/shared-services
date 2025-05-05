@@ -8,12 +8,12 @@ service UserService {
 }
 
 message GetUserRequest {
-  int32  id = 1;
+  string  id = 1;
   string     startTime = 2;
 }
 
 message GetUserBlogRequest {
-  int32  id = 1;
+  string  id = 1;
 }
 
 message Blog {
@@ -22,6 +22,6 @@ message Blog {
 
 // Define the User message
 message User {
-  int32 id = 1;
+  string id = 1;
   string name = 2;
 }
