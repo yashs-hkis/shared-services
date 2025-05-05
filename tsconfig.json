@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // Choose appropriate target version
+    "module": "CommonJS",
+    "declaration": true, // Enable type declaration generation
+    "outDir": "./dist", // Output compiled files in the dist folder
+    "strict": true, // Strict mode for TypeScript
+    "esModuleInterop": true, // Enable interoperability with CommonJS modules
+    "skipLibCheck": true // Skip type checking of all declaration files
+  },
+  "include": [
+    "src/**/*" // Include all files under the src folder
+  ],
+  "exclude": [
+    "dist" // Exclude the dist folder (compiled output)
+  ]
+}
