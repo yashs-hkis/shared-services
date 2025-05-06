@@ -142,6 +142,18 @@ exports.Prisma.CustomerDevicesScalarFieldEnum = {
   deletedAt: 'deletedAt'
 };
 
+exports.Prisma.OtpsScalarFieldEnum = {
+  id: 'id',
+  customerId: 'customerId',
+  partnerId: 'partnerId',
+  otp: 'otp',
+  channelType: 'channelType',
+  isVerified: 'isVerified',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  deletedAt: 'deletedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -156,11 +168,16 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
-
+exports.channelType = exports.$Enums.channelType = {
+  SMS: 'SMS',
+  EMAIL: 'EMAIL',
+  WHATSAPP: 'WHATSAPP'
+};
 
 exports.Prisma.ModelName = {
   Customer: 'Customer',
-  CustomerDevices: 'CustomerDevices'
+  CustomerDevices: 'CustomerDevices',
+  otps: 'otps'
 };
 
 /**

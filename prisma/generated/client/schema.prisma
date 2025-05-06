@@ -20,6 +20,7 @@ model Customer {
   deletedAt DateTime? @map("deleted_at")
 
   devices CustomerDevices[]
+  otp     otps[]
 
   @@map("customers")
   @@schema("user_schema")
@@ -40,5 +41,33 @@ model CustomerDevices {
   Customer Customer? @relation(fields: [customerId], references: [id])
 
   @@map("customer_devices")
+  @@schema("user_schema")
+}
+
+// Enum for OTP channels
+enum channelType {
+  SMS
+  EMAIL
+  WHATSAPP
+
+  @@schema("user_schema")
+}
+
+// OTP model
+model otps {
+  id          String      @id @default(uuid())
+  customerId  String?     @map("customer_id")
+  partnerId   String?     @map("partner_id")
+  otp         String      @map("otp") @db.Text
+  channelType channelType @map("channel_type") // Uses the enum defined above
+  isVerified  Boolean     @default(false) @map("is_verified")
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
+  deletedAt   DateTime?   @map("deleted_at")
+
+  // Relations
+  Customer Customer? @relation(fields: [customerId], references: [id])
+
+  @@map("otps")
   @@schema("user_schema")
 }
