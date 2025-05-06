@@ -19,15 +19,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type Customer = $Result.DefaultSelection<Prisma.$CustomerPayload>
 /**
- * Model Vehicle
+ * Model CustomerDevices
  * 
  */
-export type Vehicle = $Result.DefaultSelection<Prisma.$VehiclePayload>
-/**
- * Model VehicleType
- * 
- */
-export type VehicleType = $Result.DefaultSelection<Prisma.$VehicleTypePayload>
+export type CustomerDevices = $Result.DefaultSelection<Prisma.$CustomerDevicesPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -165,24 +160,14 @@ export class PrismaClient<
   get customer(): Prisma.CustomerDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.vehicle`: Exposes CRUD operations for the **Vehicle** model.
+   * `prisma.customerDevices`: Exposes CRUD operations for the **CustomerDevices** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Vehicles
-    * const vehicles = await prisma.vehicle.findMany()
+    * // Fetch zero or more CustomerDevices
+    * const customerDevices = await prisma.customerDevices.findMany()
     * ```
     */
-  get vehicle(): Prisma.VehicleDelegate<ExtArgs, ClientOptions>;
-
-  /**
-   * `prisma.vehicleType`: Exposes CRUD operations for the **VehicleType** model.
-    * Example usage:
-    * ```ts
-    * // Fetch zero or more VehicleTypes
-    * const vehicleTypes = await prisma.vehicleType.findMany()
-    * ```
-    */
-  get vehicleType(): Prisma.VehicleTypeDelegate<ExtArgs, ClientOptions>;
+  get customerDevices(): Prisma.CustomerDevicesDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -624,8 +609,7 @@ export namespace Prisma {
 
   export const ModelName: {
     Customer: 'Customer',
-    Vehicle: 'Vehicle',
-    VehicleType: 'VehicleType'
+    CustomerDevices: 'CustomerDevices'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -644,7 +628,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "customer" | "vehicle" | "vehicleType"
+      modelProps: "customer" | "customerDevices"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -722,151 +706,77 @@ export namespace Prisma {
           }
         }
       }
-      Vehicle: {
-        payload: Prisma.$VehiclePayload<ExtArgs>
-        fields: Prisma.VehicleFieldRefs
+      CustomerDevices: {
+        payload: Prisma.$CustomerDevicesPayload<ExtArgs>
+        fields: Prisma.CustomerDevicesFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.VehicleFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehiclePayload> | null
+            args: Prisma.CustomerDevicesFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerDevicesPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.VehicleFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehiclePayload>
+            args: Prisma.CustomerDevicesFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerDevicesPayload>
           }
           findFirst: {
-            args: Prisma.VehicleFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehiclePayload> | null
+            args: Prisma.CustomerDevicesFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerDevicesPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.VehicleFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehiclePayload>
+            args: Prisma.CustomerDevicesFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerDevicesPayload>
           }
           findMany: {
-            args: Prisma.VehicleFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehiclePayload>[]
+            args: Prisma.CustomerDevicesFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerDevicesPayload>[]
           }
           create: {
-            args: Prisma.VehicleCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehiclePayload>
+            args: Prisma.CustomerDevicesCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerDevicesPayload>
           }
           createMany: {
-            args: Prisma.VehicleCreateManyArgs<ExtArgs>
+            args: Prisma.CustomerDevicesCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.VehicleCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehiclePayload>[]
+            args: Prisma.CustomerDevicesCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerDevicesPayload>[]
           }
           delete: {
-            args: Prisma.VehicleDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehiclePayload>
+            args: Prisma.CustomerDevicesDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerDevicesPayload>
           }
           update: {
-            args: Prisma.VehicleUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehiclePayload>
+            args: Prisma.CustomerDevicesUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerDevicesPayload>
           }
           deleteMany: {
-            args: Prisma.VehicleDeleteManyArgs<ExtArgs>
+            args: Prisma.CustomerDevicesDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.VehicleUpdateManyArgs<ExtArgs>
+            args: Prisma.CustomerDevicesUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.VehicleUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehiclePayload>[]
+            args: Prisma.CustomerDevicesUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerDevicesPayload>[]
           }
           upsert: {
-            args: Prisma.VehicleUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehiclePayload>
+            args: Prisma.CustomerDevicesUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerDevicesPayload>
           }
           aggregate: {
-            args: Prisma.VehicleAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateVehicle>
+            args: Prisma.CustomerDevicesAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCustomerDevices>
           }
           groupBy: {
-            args: Prisma.VehicleGroupByArgs<ExtArgs>
-            result: $Utils.Optional<VehicleGroupByOutputType>[]
+            args: Prisma.CustomerDevicesGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CustomerDevicesGroupByOutputType>[]
           }
           count: {
-            args: Prisma.VehicleCountArgs<ExtArgs>
-            result: $Utils.Optional<VehicleCountAggregateOutputType> | number
-          }
-        }
-      }
-      VehicleType: {
-        payload: Prisma.$VehicleTypePayload<ExtArgs>
-        fields: Prisma.VehicleTypeFieldRefs
-        operations: {
-          findUnique: {
-            args: Prisma.VehicleTypeFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehicleTypePayload> | null
-          }
-          findUniqueOrThrow: {
-            args: Prisma.VehicleTypeFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehicleTypePayload>
-          }
-          findFirst: {
-            args: Prisma.VehicleTypeFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehicleTypePayload> | null
-          }
-          findFirstOrThrow: {
-            args: Prisma.VehicleTypeFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehicleTypePayload>
-          }
-          findMany: {
-            args: Prisma.VehicleTypeFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehicleTypePayload>[]
-          }
-          create: {
-            args: Prisma.VehicleTypeCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehicleTypePayload>
-          }
-          createMany: {
-            args: Prisma.VehicleTypeCreateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          createManyAndReturn: {
-            args: Prisma.VehicleTypeCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehicleTypePayload>[]
-          }
-          delete: {
-            args: Prisma.VehicleTypeDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehicleTypePayload>
-          }
-          update: {
-            args: Prisma.VehicleTypeUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehicleTypePayload>
-          }
-          deleteMany: {
-            args: Prisma.VehicleTypeDeleteManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateMany: {
-            args: Prisma.VehicleTypeUpdateManyArgs<ExtArgs>
-            result: BatchPayload
-          }
-          updateManyAndReturn: {
-            args: Prisma.VehicleTypeUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehicleTypePayload>[]
-          }
-          upsert: {
-            args: Prisma.VehicleTypeUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$VehicleTypePayload>
-          }
-          aggregate: {
-            args: Prisma.VehicleTypeAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateVehicleType>
-          }
-          groupBy: {
-            args: Prisma.VehicleTypeGroupByArgs<ExtArgs>
-            result: $Utils.Optional<VehicleTypeGroupByOutputType>[]
-          }
-          count: {
-            args: Prisma.VehicleTypeCountArgs<ExtArgs>
-            result: $Utils.Optional<VehicleTypeCountAggregateOutputType> | number
+            args: Prisma.CustomerDevicesCountArgs<ExtArgs>
+            result: $Utils.Optional<CustomerDevicesCountAggregateOutputType> | number
           }
         }
       }
@@ -955,8 +865,7 @@ export namespace Prisma {
   }
   export type GlobalOmitConfig = {
     customer?: CustomerOmit
-    vehicle?: VehicleOmit
-    vehicleType?: VehicleTypeOmit
+    customerDevices?: CustomerDevicesOmit
   }
 
   /* Types for Logging */
@@ -1047,33 +956,33 @@ export namespace Prisma {
 
 
   /**
-   * Count Type VehicleTypeCountOutputType
+   * Count Type CustomerCountOutputType
    */
 
-  export type VehicleTypeCountOutputType = {
-    vehicles: number
+  export type CustomerCountOutputType = {
+    devices: number
   }
 
-  export type VehicleTypeCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    vehicles?: boolean | VehicleTypeCountOutputTypeCountVehiclesArgs
+  export type CustomerCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    devices?: boolean | CustomerCountOutputTypeCountDevicesArgs
   }
 
   // Custom InputTypes
   /**
-   * VehicleTypeCountOutputType without action
+   * CustomerCountOutputType without action
    */
-  export type VehicleTypeCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the VehicleTypeCountOutputType
+     * Select specific fields to fetch from the CustomerCountOutputType
      */
-    select?: VehicleTypeCountOutputTypeSelect<ExtArgs> | null
+    select?: CustomerCountOutputTypeSelect<ExtArgs> | null
   }
 
   /**
-   * VehicleTypeCountOutputType without action
+   * CustomerCountOutputType without action
    */
-  export type VehicleTypeCountOutputTypeCountVehiclesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: VehicleWhereInput
+  export type CustomerCountOutputTypeCountDevicesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CustomerDevicesWhereInput
   }
 
 
@@ -1253,6 +1162,8 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     deletedAt?: boolean
+    devices?: boolean | Customer$devicesArgs<ExtArgs>
+    _count?: boolean | CustomerCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["customer"]>
 
   export type CustomerSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1283,10 +1194,18 @@ export namespace Prisma {
   }
 
   export type CustomerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "name" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["customer"]>
+  export type CustomerInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    devices?: boolean | Customer$devicesArgs<ExtArgs>
+    _count?: boolean | CustomerCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type CustomerIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type CustomerIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $CustomerPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Customer"
-    objects: {}
+    objects: {
+      devices: Prisma.$CustomerDevicesPayload<ExtArgs>[]
+    }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       email: string
@@ -1688,6 +1607,7 @@ export namespace Prisma {
    */
   export interface Prisma__CustomerClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    devices<T extends Customer$devicesArgs<ExtArgs> = {}>(args?: Subset<T, Customer$devicesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CustomerDevicesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1740,6 +1660,10 @@ export namespace Prisma {
      */
     omit?: CustomerOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CustomerInclude<ExtArgs> | null
+    /**
      * Filter, which Customer to fetch.
      */
     where: CustomerWhereUniqueInput
@@ -1758,6 +1682,10 @@ export namespace Prisma {
      */
     omit?: CustomerOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CustomerInclude<ExtArgs> | null
+    /**
      * Filter, which Customer to fetch.
      */
     where: CustomerWhereUniqueInput
@@ -1775,6 +1703,10 @@ export namespace Prisma {
      * Omit specific fields from the Customer
      */
     omit?: CustomerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CustomerInclude<ExtArgs> | null
     /**
      * Filter, which Customer to fetch.
      */
@@ -1824,6 +1756,10 @@ export namespace Prisma {
      */
     omit?: CustomerOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CustomerInclude<ExtArgs> | null
+    /**
      * Filter, which Customer to fetch.
      */
     where?: CustomerWhereInput
@@ -1872,6 +1808,10 @@ export namespace Prisma {
      */
     omit?: CustomerOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CustomerInclude<ExtArgs> | null
+    /**
      * Filter, which Customers to fetch.
      */
     where?: CustomerWhereInput
@@ -1914,6 +1854,10 @@ export namespace Prisma {
      * Omit specific fields from the Customer
      */
     omit?: CustomerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CustomerInclude<ExtArgs> | null
     /**
      * The data needed to create a Customer.
      */
@@ -1962,6 +1906,10 @@ export namespace Prisma {
      * Omit specific fields from the Customer
      */
     omit?: CustomerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CustomerInclude<ExtArgs> | null
     /**
      * The data needed to update a Customer.
      */
@@ -2029,6 +1977,10 @@ export namespace Prisma {
      */
     omit?: CustomerOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CustomerInclude<ExtArgs> | null
+    /**
      * The filter to search for the Customer to update in case it exists.
      */
     where: CustomerWhereUniqueInput
@@ -2055,6 +2007,10 @@ export namespace Prisma {
      */
     omit?: CustomerOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CustomerInclude<ExtArgs> | null
+    /**
      * Filter which Customer to delete.
      */
     where: CustomerWhereUniqueInput
@@ -2075,6 +2031,30 @@ export namespace Prisma {
   }
 
   /**
+   * Customer.devices
+   */
+  export type Customer$devicesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CustomerDevices
+     */
+    select?: CustomerDevicesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CustomerDevices
+     */
+    omit?: CustomerDevicesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CustomerDevicesInclude<ExtArgs> | null
+    where?: CustomerDevicesWhereInput
+    orderBy?: CustomerDevicesOrderByWithRelationInput | CustomerDevicesOrderByWithRelationInput[]
+    cursor?: CustomerDevicesWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CustomerDevicesScalarFieldEnum | CustomerDevicesScalarFieldEnum[]
+  }
+
+  /**
    * Customer without action
    */
   export type CustomerDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2086,41 +2066,57 @@ export namespace Prisma {
      * Omit specific fields from the Customer
      */
     omit?: CustomerOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CustomerInclude<ExtArgs> | null
   }
 
 
   /**
-   * Model Vehicle
+   * Model CustomerDevices
    */
 
-  export type AggregateVehicle = {
-    _count: VehicleCountAggregateOutputType | null
-    _min: VehicleMinAggregateOutputType | null
-    _max: VehicleMaxAggregateOutputType | null
+  export type AggregateCustomerDevices = {
+    _count: CustomerDevicesCountAggregateOutputType | null
+    _min: CustomerDevicesMinAggregateOutputType | null
+    _max: CustomerDevicesMaxAggregateOutputType | null
   }
 
-  export type VehicleMinAggregateOutputType = {
+  export type CustomerDevicesMinAggregateOutputType = {
     id: string | null
-    typeId: string | null
-    licensePlate: string | null
+    customerId: string | null
+    token: string | null
+    deviceId: string | null
+    osType: string | null
+    osVersion: string | null
+    appVersion: string | null
     createdAt: Date | null
     updatedAt: Date | null
     deletedAt: Date | null
   }
 
-  export type VehicleMaxAggregateOutputType = {
+  export type CustomerDevicesMaxAggregateOutputType = {
     id: string | null
-    typeId: string | null
-    licensePlate: string | null
+    customerId: string | null
+    token: string | null
+    deviceId: string | null
+    osType: string | null
+    osVersion: string | null
+    appVersion: string | null
     createdAt: Date | null
     updatedAt: Date | null
     deletedAt: Date | null
   }
 
-  export type VehicleCountAggregateOutputType = {
+  export type CustomerDevicesCountAggregateOutputType = {
     id: number
-    typeId: number
-    licensePlate: number
+    customerId: number
+    token: number
+    deviceId: number
+    osType: number
+    osVersion: number
+    appVersion: number
     createdAt: number
     updatedAt: number
     deletedAt: number
@@ -2128,324 +2124,360 @@ export namespace Prisma {
   }
 
 
-  export type VehicleMinAggregateInputType = {
+  export type CustomerDevicesMinAggregateInputType = {
     id?: true
-    typeId?: true
-    licensePlate?: true
+    customerId?: true
+    token?: true
+    deviceId?: true
+    osType?: true
+    osVersion?: true
+    appVersion?: true
     createdAt?: true
     updatedAt?: true
     deletedAt?: true
   }
 
-  export type VehicleMaxAggregateInputType = {
+  export type CustomerDevicesMaxAggregateInputType = {
     id?: true
-    typeId?: true
-    licensePlate?: true
+    customerId?: true
+    token?: true
+    deviceId?: true
+    osType?: true
+    osVersion?: true
+    appVersion?: true
     createdAt?: true
     updatedAt?: true
     deletedAt?: true
   }
 
-  export type VehicleCountAggregateInputType = {
+  export type CustomerDevicesCountAggregateInputType = {
     id?: true
-    typeId?: true
-    licensePlate?: true
+    customerId?: true
+    token?: true
+    deviceId?: true
+    osType?: true
+    osVersion?: true
+    appVersion?: true
     createdAt?: true
     updatedAt?: true
     deletedAt?: true
     _all?: true
   }
 
-  export type VehicleAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Vehicle to aggregate.
+     * Filter which CustomerDevices to aggregate.
      */
-    where?: VehicleWhereInput
+    where?: CustomerDevicesWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Vehicles to fetch.
+     * Determine the order of CustomerDevices to fetch.
      */
-    orderBy?: VehicleOrderByWithRelationInput | VehicleOrderByWithRelationInput[]
+    orderBy?: CustomerDevicesOrderByWithRelationInput | CustomerDevicesOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: VehicleWhereUniqueInput
+    cursor?: CustomerDevicesWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Vehicles from the position of the cursor.
+     * Take `±n` CustomerDevices from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Vehicles.
+     * Skip the first `n` CustomerDevices.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Vehicles
+     * Count returned CustomerDevices
     **/
-    _count?: true | VehicleCountAggregateInputType
+    _count?: true | CustomerDevicesCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: VehicleMinAggregateInputType
+    _min?: CustomerDevicesMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: VehicleMaxAggregateInputType
+    _max?: CustomerDevicesMaxAggregateInputType
   }
 
-  export type GetVehicleAggregateType<T extends VehicleAggregateArgs> = {
-        [P in keyof T & keyof AggregateVehicle]: P extends '_count' | 'count'
+  export type GetCustomerDevicesAggregateType<T extends CustomerDevicesAggregateArgs> = {
+        [P in keyof T & keyof AggregateCustomerDevices]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateVehicle[P]>
-      : GetScalarType<T[P], AggregateVehicle[P]>
+        : GetScalarType<T[P], AggregateCustomerDevices[P]>
+      : GetScalarType<T[P], AggregateCustomerDevices[P]>
   }
 
 
 
 
-  export type VehicleGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: VehicleWhereInput
-    orderBy?: VehicleOrderByWithAggregationInput | VehicleOrderByWithAggregationInput[]
-    by: VehicleScalarFieldEnum[] | VehicleScalarFieldEnum
-    having?: VehicleScalarWhereWithAggregatesInput
+  export type CustomerDevicesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CustomerDevicesWhereInput
+    orderBy?: CustomerDevicesOrderByWithAggregationInput | CustomerDevicesOrderByWithAggregationInput[]
+    by: CustomerDevicesScalarFieldEnum[] | CustomerDevicesScalarFieldEnum
+    having?: CustomerDevicesScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: VehicleCountAggregateInputType | true
-    _min?: VehicleMinAggregateInputType
-    _max?: VehicleMaxAggregateInputType
+    _count?: CustomerDevicesCountAggregateInputType | true
+    _min?: CustomerDevicesMinAggregateInputType
+    _max?: CustomerDevicesMaxAggregateInputType
   }
 
-  export type VehicleGroupByOutputType = {
+  export type CustomerDevicesGroupByOutputType = {
     id: string
-    typeId: string
-    licensePlate: string
+    customerId: string
+    token: string
+    deviceId: string
+    osType: string
+    osVersion: string
+    appVersion: string
     createdAt: Date
     updatedAt: Date
     deletedAt: Date | null
-    _count: VehicleCountAggregateOutputType | null
-    _min: VehicleMinAggregateOutputType | null
-    _max: VehicleMaxAggregateOutputType | null
+    _count: CustomerDevicesCountAggregateOutputType | null
+    _min: CustomerDevicesMinAggregateOutputType | null
+    _max: CustomerDevicesMaxAggregateOutputType | null
   }
 
-  type GetVehicleGroupByPayload<T extends VehicleGroupByArgs> = Prisma.PrismaPromise<
+  type GetCustomerDevicesGroupByPayload<T extends CustomerDevicesGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<VehicleGroupByOutputType, T['by']> &
+      PickEnumerable<CustomerDevicesGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof VehicleGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof CustomerDevicesGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], VehicleGroupByOutputType[P]>
-            : GetScalarType<T[P], VehicleGroupByOutputType[P]>
+              : GetScalarType<T[P], CustomerDevicesGroupByOutputType[P]>
+            : GetScalarType<T[P], CustomerDevicesGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type VehicleSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type CustomerDevicesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    typeId?: boolean
-    licensePlate?: boolean
+    customerId?: boolean
+    token?: boolean
+    deviceId?: boolean
+    osType?: boolean
+    osVersion?: boolean
+    appVersion?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     deletedAt?: boolean
-    type?: boolean | VehicleTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["vehicle"]>
+    Customer?: boolean | CustomerDevices$CustomerArgs<ExtArgs>
+  }, ExtArgs["result"]["customerDevices"]>
 
-  export type VehicleSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type CustomerDevicesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    typeId?: boolean
-    licensePlate?: boolean
+    customerId?: boolean
+    token?: boolean
+    deviceId?: boolean
+    osType?: boolean
+    osVersion?: boolean
+    appVersion?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     deletedAt?: boolean
-    type?: boolean | VehicleTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["vehicle"]>
+    Customer?: boolean | CustomerDevices$CustomerArgs<ExtArgs>
+  }, ExtArgs["result"]["customerDevices"]>
 
-  export type VehicleSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type CustomerDevicesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    typeId?: boolean
-    licensePlate?: boolean
+    customerId?: boolean
+    token?: boolean
+    deviceId?: boolean
+    osType?: boolean
+    osVersion?: boolean
+    appVersion?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     deletedAt?: boolean
-    type?: boolean | VehicleTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["vehicle"]>
+    Customer?: boolean | CustomerDevices$CustomerArgs<ExtArgs>
+  }, ExtArgs["result"]["customerDevices"]>
 
-  export type VehicleSelectScalar = {
+  export type CustomerDevicesSelectScalar = {
     id?: boolean
-    typeId?: boolean
-    licensePlate?: boolean
+    customerId?: boolean
+    token?: boolean
+    deviceId?: boolean
+    osType?: boolean
+    osVersion?: boolean
+    appVersion?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     deletedAt?: boolean
   }
 
-  export type VehicleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "typeId" | "licensePlate" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["vehicle"]>
-  export type VehicleInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    type?: boolean | VehicleTypeDefaultArgs<ExtArgs>
+  export type CustomerDevicesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "customerId" | "token" | "deviceId" | "osType" | "osVersion" | "appVersion" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["customerDevices"]>
+  export type CustomerDevicesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Customer?: boolean | CustomerDevices$CustomerArgs<ExtArgs>
   }
-  export type VehicleIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    type?: boolean | VehicleTypeDefaultArgs<ExtArgs>
+  export type CustomerDevicesIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Customer?: boolean | CustomerDevices$CustomerArgs<ExtArgs>
   }
-  export type VehicleIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    type?: boolean | VehicleTypeDefaultArgs<ExtArgs>
+  export type CustomerDevicesIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    Customer?: boolean | CustomerDevices$CustomerArgs<ExtArgs>
   }
 
-  export type $VehiclePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Vehicle"
+  export type $CustomerDevicesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "CustomerDevices"
     objects: {
-      type: Prisma.$VehicleTypePayload<ExtArgs>
+      Customer: Prisma.$CustomerPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      typeId: string
-      licensePlate: string
+      customerId: string
+      token: string
+      deviceId: string
+      osType: string
+      osVersion: string
+      appVersion: string
       createdAt: Date
       updatedAt: Date
       deletedAt: Date | null
-    }, ExtArgs["result"]["vehicle"]>
+    }, ExtArgs["result"]["customerDevices"]>
     composites: {}
   }
 
-  type VehicleGetPayload<S extends boolean | null | undefined | VehicleDefaultArgs> = $Result.GetResult<Prisma.$VehiclePayload, S>
+  type CustomerDevicesGetPayload<S extends boolean | null | undefined | CustomerDevicesDefaultArgs> = $Result.GetResult<Prisma.$CustomerDevicesPayload, S>
 
-  type VehicleCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<VehicleFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: VehicleCountAggregateInputType | true
+  type CustomerDevicesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CustomerDevicesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CustomerDevicesCountAggregateInputType | true
     }
 
-  export interface VehicleDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Vehicle'], meta: { name: 'Vehicle' } }
+  export interface CustomerDevicesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['CustomerDevices'], meta: { name: 'CustomerDevices' } }
     /**
-     * Find zero or one Vehicle that matches the filter.
-     * @param {VehicleFindUniqueArgs} args - Arguments to find a Vehicle
+     * Find zero or one CustomerDevices that matches the filter.
+     * @param {CustomerDevicesFindUniqueArgs} args - Arguments to find a CustomerDevices
      * @example
-     * // Get one Vehicle
-     * const vehicle = await prisma.vehicle.findUnique({
+     * // Get one CustomerDevices
+     * const customerDevices = await prisma.customerDevices.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends VehicleFindUniqueArgs>(args: SelectSubset<T, VehicleFindUniqueArgs<ExtArgs>>): Prisma__VehicleClient<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends CustomerDevicesFindUniqueArgs>(args: SelectSubset<T, CustomerDevicesFindUniqueArgs<ExtArgs>>): Prisma__CustomerDevicesClient<$Result.GetResult<Prisma.$CustomerDevicesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Vehicle that matches the filter or throw an error with `error.code='P2025'`
+     * Find one CustomerDevices that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {VehicleFindUniqueOrThrowArgs} args - Arguments to find a Vehicle
+     * @param {CustomerDevicesFindUniqueOrThrowArgs} args - Arguments to find a CustomerDevices
      * @example
-     * // Get one Vehicle
-     * const vehicle = await prisma.vehicle.findUniqueOrThrow({
+     * // Get one CustomerDevices
+     * const customerDevices = await prisma.customerDevices.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends VehicleFindUniqueOrThrowArgs>(args: SelectSubset<T, VehicleFindUniqueOrThrowArgs<ExtArgs>>): Prisma__VehicleClient<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends CustomerDevicesFindUniqueOrThrowArgs>(args: SelectSubset<T, CustomerDevicesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CustomerDevicesClient<$Result.GetResult<Prisma.$CustomerDevicesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Vehicle that matches the filter.
+     * Find the first CustomerDevices that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleFindFirstArgs} args - Arguments to find a Vehicle
+     * @param {CustomerDevicesFindFirstArgs} args - Arguments to find a CustomerDevices
      * @example
-     * // Get one Vehicle
-     * const vehicle = await prisma.vehicle.findFirst({
+     * // Get one CustomerDevices
+     * const customerDevices = await prisma.customerDevices.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends VehicleFindFirstArgs>(args?: SelectSubset<T, VehicleFindFirstArgs<ExtArgs>>): Prisma__VehicleClient<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends CustomerDevicesFindFirstArgs>(args?: SelectSubset<T, CustomerDevicesFindFirstArgs<ExtArgs>>): Prisma__CustomerDevicesClient<$Result.GetResult<Prisma.$CustomerDevicesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Vehicle that matches the filter or
+     * Find the first CustomerDevices that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleFindFirstOrThrowArgs} args - Arguments to find a Vehicle
+     * @param {CustomerDevicesFindFirstOrThrowArgs} args - Arguments to find a CustomerDevices
      * @example
-     * // Get one Vehicle
-     * const vehicle = await prisma.vehicle.findFirstOrThrow({
+     * // Get one CustomerDevices
+     * const customerDevices = await prisma.customerDevices.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends VehicleFindFirstOrThrowArgs>(args?: SelectSubset<T, VehicleFindFirstOrThrowArgs<ExtArgs>>): Prisma__VehicleClient<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends CustomerDevicesFindFirstOrThrowArgs>(args?: SelectSubset<T, CustomerDevicesFindFirstOrThrowArgs<ExtArgs>>): Prisma__CustomerDevicesClient<$Result.GetResult<Prisma.$CustomerDevicesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Vehicles that matches the filter.
+     * Find zero or more CustomerDevices that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {CustomerDevicesFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Vehicles
-     * const vehicles = await prisma.vehicle.findMany()
+     * // Get all CustomerDevices
+     * const customerDevices = await prisma.customerDevices.findMany()
      * 
-     * // Get first 10 Vehicles
-     * const vehicles = await prisma.vehicle.findMany({ take: 10 })
+     * // Get first 10 CustomerDevices
+     * const customerDevices = await prisma.customerDevices.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const vehicleWithIdOnly = await prisma.vehicle.findMany({ select: { id: true } })
+     * const customerDevicesWithIdOnly = await prisma.customerDevices.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends VehicleFindManyArgs>(args?: SelectSubset<T, VehicleFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends CustomerDevicesFindManyArgs>(args?: SelectSubset<T, CustomerDevicesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CustomerDevicesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Vehicle.
-     * @param {VehicleCreateArgs} args - Arguments to create a Vehicle.
+     * Create a CustomerDevices.
+     * @param {CustomerDevicesCreateArgs} args - Arguments to create a CustomerDevices.
      * @example
-     * // Create one Vehicle
-     * const Vehicle = await prisma.vehicle.create({
+     * // Create one CustomerDevices
+     * const CustomerDevices = await prisma.customerDevices.create({
      *   data: {
-     *     // ... data to create a Vehicle
+     *     // ... data to create a CustomerDevices
      *   }
      * })
      * 
      */
-    create<T extends VehicleCreateArgs>(args: SelectSubset<T, VehicleCreateArgs<ExtArgs>>): Prisma__VehicleClient<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends CustomerDevicesCreateArgs>(args: SelectSubset<T, CustomerDevicesCreateArgs<ExtArgs>>): Prisma__CustomerDevicesClient<$Result.GetResult<Prisma.$CustomerDevicesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Vehicles.
-     * @param {VehicleCreateManyArgs} args - Arguments to create many Vehicles.
+     * Create many CustomerDevices.
+     * @param {CustomerDevicesCreateManyArgs} args - Arguments to create many CustomerDevices.
      * @example
-     * // Create many Vehicles
-     * const vehicle = await prisma.vehicle.createMany({
+     * // Create many CustomerDevices
+     * const customerDevices = await prisma.customerDevices.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends VehicleCreateManyArgs>(args?: SelectSubset<T, VehicleCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends CustomerDevicesCreateManyArgs>(args?: SelectSubset<T, CustomerDevicesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Vehicles and returns the data saved in the database.
-     * @param {VehicleCreateManyAndReturnArgs} args - Arguments to create many Vehicles.
+     * Create many CustomerDevices and returns the data saved in the database.
+     * @param {CustomerDevicesCreateManyAndReturnArgs} args - Arguments to create many CustomerDevices.
      * @example
-     * // Create many Vehicles
-     * const vehicle = await prisma.vehicle.createManyAndReturn({
+     * // Create many CustomerDevices
+     * const customerDevices = await prisma.customerDevices.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Vehicles and only return the `id`
-     * const vehicleWithIdOnly = await prisma.vehicle.createManyAndReturn({
+     * // Create many CustomerDevices and only return the `id`
+     * const customerDevicesWithIdOnly = await prisma.customerDevices.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -2455,28 +2487,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends VehicleCreateManyAndReturnArgs>(args?: SelectSubset<T, VehicleCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends CustomerDevicesCreateManyAndReturnArgs>(args?: SelectSubset<T, CustomerDevicesCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CustomerDevicesPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Vehicle.
-     * @param {VehicleDeleteArgs} args - Arguments to delete one Vehicle.
+     * Delete a CustomerDevices.
+     * @param {CustomerDevicesDeleteArgs} args - Arguments to delete one CustomerDevices.
      * @example
-     * // Delete one Vehicle
-     * const Vehicle = await prisma.vehicle.delete({
+     * // Delete one CustomerDevices
+     * const CustomerDevices = await prisma.customerDevices.delete({
      *   where: {
-     *     // ... filter to delete one Vehicle
+     *     // ... filter to delete one CustomerDevices
      *   }
      * })
      * 
      */
-    delete<T extends VehicleDeleteArgs>(args: SelectSubset<T, VehicleDeleteArgs<ExtArgs>>): Prisma__VehicleClient<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends CustomerDevicesDeleteArgs>(args: SelectSubset<T, CustomerDevicesDeleteArgs<ExtArgs>>): Prisma__CustomerDevicesClient<$Result.GetResult<Prisma.$CustomerDevicesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Vehicle.
-     * @param {VehicleUpdateArgs} args - Arguments to update one Vehicle.
+     * Update one CustomerDevices.
+     * @param {CustomerDevicesUpdateArgs} args - Arguments to update one CustomerDevices.
      * @example
-     * // Update one Vehicle
-     * const vehicle = await prisma.vehicle.update({
+     * // Update one CustomerDevices
+     * const customerDevices = await prisma.customerDevices.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2486,30 +2518,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends VehicleUpdateArgs>(args: SelectSubset<T, VehicleUpdateArgs<ExtArgs>>): Prisma__VehicleClient<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends CustomerDevicesUpdateArgs>(args: SelectSubset<T, CustomerDevicesUpdateArgs<ExtArgs>>): Prisma__CustomerDevicesClient<$Result.GetResult<Prisma.$CustomerDevicesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Vehicles.
-     * @param {VehicleDeleteManyArgs} args - Arguments to filter Vehicles to delete.
+     * Delete zero or more CustomerDevices.
+     * @param {CustomerDevicesDeleteManyArgs} args - Arguments to filter CustomerDevices to delete.
      * @example
-     * // Delete a few Vehicles
-     * const { count } = await prisma.vehicle.deleteMany({
+     * // Delete a few CustomerDevices
+     * const { count } = await prisma.customerDevices.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends VehicleDeleteManyArgs>(args?: SelectSubset<T, VehicleDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends CustomerDevicesDeleteManyArgs>(args?: SelectSubset<T, CustomerDevicesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Vehicles.
+     * Update zero or more CustomerDevices.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {CustomerDevicesUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Vehicles
-     * const vehicle = await prisma.vehicle.updateMany({
+     * // Update many CustomerDevices
+     * const customerDevices = await prisma.customerDevices.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2519,14 +2551,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends VehicleUpdateManyArgs>(args: SelectSubset<T, VehicleUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends CustomerDevicesUpdateManyArgs>(args: SelectSubset<T, CustomerDevicesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Vehicles and returns the data updated in the database.
-     * @param {VehicleUpdateManyAndReturnArgs} args - Arguments to update many Vehicles.
+     * Update zero or more CustomerDevices and returns the data updated in the database.
+     * @param {CustomerDevicesUpdateManyAndReturnArgs} args - Arguments to update many CustomerDevices.
      * @example
-     * // Update many Vehicles
-     * const vehicle = await prisma.vehicle.updateManyAndReturn({
+     * // Update many CustomerDevices
+     * const customerDevices = await prisma.customerDevices.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2535,8 +2567,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Vehicles and only return the `id`
-     * const vehicleWithIdOnly = await prisma.vehicle.updateManyAndReturn({
+     * // Update zero or more CustomerDevices and only return the `id`
+     * const customerDevicesWithIdOnly = await prisma.customerDevices.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -2549,56 +2581,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends VehicleUpdateManyAndReturnArgs>(args: SelectSubset<T, VehicleUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends CustomerDevicesUpdateManyAndReturnArgs>(args: SelectSubset<T, CustomerDevicesUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CustomerDevicesPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Vehicle.
-     * @param {VehicleUpsertArgs} args - Arguments to update or create a Vehicle.
+     * Create or update one CustomerDevices.
+     * @param {CustomerDevicesUpsertArgs} args - Arguments to update or create a CustomerDevices.
      * @example
-     * // Update or create a Vehicle
-     * const vehicle = await prisma.vehicle.upsert({
+     * // Update or create a CustomerDevices
+     * const customerDevices = await prisma.customerDevices.upsert({
      *   create: {
-     *     // ... data to create a Vehicle
+     *     // ... data to create a CustomerDevices
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Vehicle we want to update
+     *     // ... the filter for the CustomerDevices we want to update
      *   }
      * })
      */
-    upsert<T extends VehicleUpsertArgs>(args: SelectSubset<T, VehicleUpsertArgs<ExtArgs>>): Prisma__VehicleClient<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends CustomerDevicesUpsertArgs>(args: SelectSubset<T, CustomerDevicesUpsertArgs<ExtArgs>>): Prisma__CustomerDevicesClient<$Result.GetResult<Prisma.$CustomerDevicesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Vehicles.
+     * Count the number of CustomerDevices.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleCountArgs} args - Arguments to filter Vehicles to count.
+     * @param {CustomerDevicesCountArgs} args - Arguments to filter CustomerDevices to count.
      * @example
-     * // Count the number of Vehicles
-     * const count = await prisma.vehicle.count({
+     * // Count the number of CustomerDevices
+     * const count = await prisma.customerDevices.count({
      *   where: {
-     *     // ... the filter for the Vehicles we want to count
+     *     // ... the filter for the CustomerDevices we want to count
      *   }
      * })
     **/
-    count<T extends VehicleCountArgs>(
-      args?: Subset<T, VehicleCountArgs>,
+    count<T extends CustomerDevicesCountArgs>(
+      args?: Subset<T, CustomerDevicesCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], VehicleCountAggregateOutputType>
+          : GetScalarType<T['select'], CustomerDevicesCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Vehicle.
+     * Allows you to perform aggregations operations on a CustomerDevices.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {CustomerDevicesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -2618,13 +2650,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends VehicleAggregateArgs>(args: Subset<T, VehicleAggregateArgs>): Prisma.PrismaPromise<GetVehicleAggregateType<T>>
+    aggregate<T extends CustomerDevicesAggregateArgs>(args: Subset<T, CustomerDevicesAggregateArgs>): Prisma.PrismaPromise<GetCustomerDevicesAggregateType<T>>
 
     /**
-     * Group by Vehicle.
+     * Group by CustomerDevices.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleGroupByArgs} args - Group by arguments.
+     * @param {CustomerDevicesGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2639,14 +2671,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends VehicleGroupByArgs,
+      T extends CustomerDevicesGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: VehicleGroupByArgs['orderBy'] }
-        : { orderBy?: VehicleGroupByArgs['orderBy'] },
+        ? { orderBy: CustomerDevicesGroupByArgs['orderBy'] }
+        : { orderBy?: CustomerDevicesGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2695,22 +2727,22 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, VehicleGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetVehicleGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, CustomerDevicesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCustomerDevicesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Vehicle model
+   * Fields of the CustomerDevices model
    */
-  readonly fields: VehicleFieldRefs;
+  readonly fields: CustomerDevicesFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Vehicle.
+   * The delegate class that acts as a "Promise-like" for CustomerDevices.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__VehicleClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__CustomerDevicesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    type<T extends VehicleTypeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, VehicleTypeDefaultArgs<ExtArgs>>): Prisma__VehicleTypeClient<$Result.GetResult<Prisma.$VehicleTypePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    Customer<T extends CustomerDevices$CustomerArgs<ExtArgs> = {}>(args?: Subset<T, CustomerDevices$CustomerArgs<ExtArgs>>): Prisma__CustomerClient<$Result.GetResult<Prisma.$CustomerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2737,1496 +2769,449 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Vehicle model
+   * Fields of the CustomerDevices model
    */
-  interface VehicleFieldRefs {
-    readonly id: FieldRef<"Vehicle", 'String'>
-    readonly typeId: FieldRef<"Vehicle", 'String'>
-    readonly licensePlate: FieldRef<"Vehicle", 'String'>
-    readonly createdAt: FieldRef<"Vehicle", 'DateTime'>
-    readonly updatedAt: FieldRef<"Vehicle", 'DateTime'>
-    readonly deletedAt: FieldRef<"Vehicle", 'DateTime'>
+  interface CustomerDevicesFieldRefs {
+    readonly id: FieldRef<"CustomerDevices", 'String'>
+    readonly customerId: FieldRef<"CustomerDevices", 'String'>
+    readonly token: FieldRef<"CustomerDevices", 'String'>
+    readonly deviceId: FieldRef<"CustomerDevices", 'String'>
+    readonly osType: FieldRef<"CustomerDevices", 'String'>
+    readonly osVersion: FieldRef<"CustomerDevices", 'String'>
+    readonly appVersion: FieldRef<"CustomerDevices", 'String'>
+    readonly createdAt: FieldRef<"CustomerDevices", 'DateTime'>
+    readonly updatedAt: FieldRef<"CustomerDevices", 'DateTime'>
+    readonly deletedAt: FieldRef<"CustomerDevices", 'DateTime'>
   }
     
 
   // Custom InputTypes
   /**
-   * Vehicle findUnique
+   * CustomerDevices findUnique
    */
-  export type VehicleFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Vehicle
+     * Select specific fields to fetch from the CustomerDevices
      */
-    select?: VehicleSelect<ExtArgs> | null
+    select?: CustomerDevicesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Vehicle
+     * Omit specific fields from the CustomerDevices
      */
-    omit?: VehicleOmit<ExtArgs> | null
+    omit?: CustomerDevicesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: VehicleInclude<ExtArgs> | null
+    include?: CustomerDevicesInclude<ExtArgs> | null
     /**
-     * Filter, which Vehicle to fetch.
+     * Filter, which CustomerDevices to fetch.
      */
-    where: VehicleWhereUniqueInput
+    where: CustomerDevicesWhereUniqueInput
   }
 
   /**
-   * Vehicle findUniqueOrThrow
+   * CustomerDevices findUniqueOrThrow
    */
-  export type VehicleFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Vehicle
+     * Select specific fields to fetch from the CustomerDevices
      */
-    select?: VehicleSelect<ExtArgs> | null
+    select?: CustomerDevicesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Vehicle
+     * Omit specific fields from the CustomerDevices
      */
-    omit?: VehicleOmit<ExtArgs> | null
+    omit?: CustomerDevicesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: VehicleInclude<ExtArgs> | null
+    include?: CustomerDevicesInclude<ExtArgs> | null
     /**
-     * Filter, which Vehicle to fetch.
+     * Filter, which CustomerDevices to fetch.
      */
-    where: VehicleWhereUniqueInput
+    where: CustomerDevicesWhereUniqueInput
   }
 
   /**
-   * Vehicle findFirst
+   * CustomerDevices findFirst
    */
-  export type VehicleFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Vehicle
+     * Select specific fields to fetch from the CustomerDevices
      */
-    select?: VehicleSelect<ExtArgs> | null
+    select?: CustomerDevicesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Vehicle
+     * Omit specific fields from the CustomerDevices
      */
-    omit?: VehicleOmit<ExtArgs> | null
+    omit?: CustomerDevicesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: VehicleInclude<ExtArgs> | null
+    include?: CustomerDevicesInclude<ExtArgs> | null
     /**
-     * Filter, which Vehicle to fetch.
+     * Filter, which CustomerDevices to fetch.
      */
-    where?: VehicleWhereInput
+    where?: CustomerDevicesWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Vehicles to fetch.
+     * Determine the order of CustomerDevices to fetch.
      */
-    orderBy?: VehicleOrderByWithRelationInput | VehicleOrderByWithRelationInput[]
+    orderBy?: CustomerDevicesOrderByWithRelationInput | CustomerDevicesOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Vehicles.
+     * Sets the position for searching for CustomerDevices.
      */
-    cursor?: VehicleWhereUniqueInput
+    cursor?: CustomerDevicesWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Vehicles from the position of the cursor.
+     * Take `±n` CustomerDevices from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Vehicles.
+     * Skip the first `n` CustomerDevices.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Vehicles.
+     * Filter by unique combinations of CustomerDevices.
      */
-    distinct?: VehicleScalarFieldEnum | VehicleScalarFieldEnum[]
+    distinct?: CustomerDevicesScalarFieldEnum | CustomerDevicesScalarFieldEnum[]
   }
 
   /**
-   * Vehicle findFirstOrThrow
+   * CustomerDevices findFirstOrThrow
    */
-  export type VehicleFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Vehicle
+     * Select specific fields to fetch from the CustomerDevices
      */
-    select?: VehicleSelect<ExtArgs> | null
+    select?: CustomerDevicesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Vehicle
+     * Omit specific fields from the CustomerDevices
      */
-    omit?: VehicleOmit<ExtArgs> | null
+    omit?: CustomerDevicesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: VehicleInclude<ExtArgs> | null
+    include?: CustomerDevicesInclude<ExtArgs> | null
     /**
-     * Filter, which Vehicle to fetch.
+     * Filter, which CustomerDevices to fetch.
      */
-    where?: VehicleWhereInput
+    where?: CustomerDevicesWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Vehicles to fetch.
+     * Determine the order of CustomerDevices to fetch.
      */
-    orderBy?: VehicleOrderByWithRelationInput | VehicleOrderByWithRelationInput[]
+    orderBy?: CustomerDevicesOrderByWithRelationInput | CustomerDevicesOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Vehicles.
+     * Sets the position for searching for CustomerDevices.
      */
-    cursor?: VehicleWhereUniqueInput
+    cursor?: CustomerDevicesWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Vehicles from the position of the cursor.
+     * Take `±n` CustomerDevices from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Vehicles.
+     * Skip the first `n` CustomerDevices.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Vehicles.
+     * Filter by unique combinations of CustomerDevices.
      */
-    distinct?: VehicleScalarFieldEnum | VehicleScalarFieldEnum[]
+    distinct?: CustomerDevicesScalarFieldEnum | CustomerDevicesScalarFieldEnum[]
   }
 
   /**
-   * Vehicle findMany
+   * CustomerDevices findMany
    */
-  export type VehicleFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Vehicle
+     * Select specific fields to fetch from the CustomerDevices
      */
-    select?: VehicleSelect<ExtArgs> | null
+    select?: CustomerDevicesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Vehicle
+     * Omit specific fields from the CustomerDevices
      */
-    omit?: VehicleOmit<ExtArgs> | null
+    omit?: CustomerDevicesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: VehicleInclude<ExtArgs> | null
+    include?: CustomerDevicesInclude<ExtArgs> | null
     /**
-     * Filter, which Vehicles to fetch.
+     * Filter, which CustomerDevices to fetch.
      */
-    where?: VehicleWhereInput
+    where?: CustomerDevicesWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Vehicles to fetch.
+     * Determine the order of CustomerDevices to fetch.
      */
-    orderBy?: VehicleOrderByWithRelationInput | VehicleOrderByWithRelationInput[]
+    orderBy?: CustomerDevicesOrderByWithRelationInput | CustomerDevicesOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Vehicles.
+     * Sets the position for listing CustomerDevices.
      */
-    cursor?: VehicleWhereUniqueInput
+    cursor?: CustomerDevicesWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Vehicles from the position of the cursor.
+     * Take `±n` CustomerDevices from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Vehicles.
+     * Skip the first `n` CustomerDevices.
      */
     skip?: number
-    distinct?: VehicleScalarFieldEnum | VehicleScalarFieldEnum[]
+    distinct?: CustomerDevicesScalarFieldEnum | CustomerDevicesScalarFieldEnum[]
   }
 
   /**
-   * Vehicle create
+   * CustomerDevices create
    */
-  export type VehicleCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Vehicle
+     * Select specific fields to fetch from the CustomerDevices
      */
-    select?: VehicleSelect<ExtArgs> | null
+    select?: CustomerDevicesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Vehicle
+     * Omit specific fields from the CustomerDevices
      */
-    omit?: VehicleOmit<ExtArgs> | null
+    omit?: CustomerDevicesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: VehicleInclude<ExtArgs> | null
+    include?: CustomerDevicesInclude<ExtArgs> | null
     /**
-     * The data needed to create a Vehicle.
+     * The data needed to create a CustomerDevices.
      */
-    data: XOR<VehicleCreateInput, VehicleUncheckedCreateInput>
+    data: XOR<CustomerDevicesCreateInput, CustomerDevicesUncheckedCreateInput>
   }
 
   /**
-   * Vehicle createMany
+   * CustomerDevices createMany
    */
-  export type VehicleCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Vehicles.
+     * The data used to create many CustomerDevices.
      */
-    data: VehicleCreateManyInput | VehicleCreateManyInput[]
+    data: CustomerDevicesCreateManyInput | CustomerDevicesCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Vehicle createManyAndReturn
+   * CustomerDevices createManyAndReturn
    */
-  export type VehicleCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Vehicle
+     * Select specific fields to fetch from the CustomerDevices
      */
-    select?: VehicleSelectCreateManyAndReturn<ExtArgs> | null
+    select?: CustomerDevicesSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Vehicle
+     * Omit specific fields from the CustomerDevices
      */
-    omit?: VehicleOmit<ExtArgs> | null
+    omit?: CustomerDevicesOmit<ExtArgs> | null
     /**
-     * The data used to create many Vehicles.
+     * The data used to create many CustomerDevices.
      */
-    data: VehicleCreateManyInput | VehicleCreateManyInput[]
+    data: CustomerDevicesCreateManyInput | CustomerDevicesCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: VehicleIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: CustomerDevicesIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Vehicle update
+   * CustomerDevices update
    */
-  export type VehicleUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Vehicle
+     * Select specific fields to fetch from the CustomerDevices
      */
-    select?: VehicleSelect<ExtArgs> | null
+    select?: CustomerDevicesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Vehicle
+     * Omit specific fields from the CustomerDevices
      */
-    omit?: VehicleOmit<ExtArgs> | null
+    omit?: CustomerDevicesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: VehicleInclude<ExtArgs> | null
+    include?: CustomerDevicesInclude<ExtArgs> | null
     /**
-     * The data needed to update a Vehicle.
+     * The data needed to update a CustomerDevices.
      */
-    data: XOR<VehicleUpdateInput, VehicleUncheckedUpdateInput>
+    data: XOR<CustomerDevicesUpdateInput, CustomerDevicesUncheckedUpdateInput>
     /**
-     * Choose, which Vehicle to update.
+     * Choose, which CustomerDevices to update.
      */
-    where: VehicleWhereUniqueInput
+    where: CustomerDevicesWhereUniqueInput
   }
 
   /**
-   * Vehicle updateMany
+   * CustomerDevices updateMany
    */
-  export type VehicleUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Vehicles.
+     * The data used to update CustomerDevices.
      */
-    data: XOR<VehicleUpdateManyMutationInput, VehicleUncheckedUpdateManyInput>
+    data: XOR<CustomerDevicesUpdateManyMutationInput, CustomerDevicesUncheckedUpdateManyInput>
     /**
-     * Filter which Vehicles to update
+     * Filter which CustomerDevices to update
      */
-    where?: VehicleWhereInput
+    where?: CustomerDevicesWhereInput
     /**
-     * Limit how many Vehicles to update.
+     * Limit how many CustomerDevices to update.
      */
     limit?: number
   }
 
   /**
-   * Vehicle updateManyAndReturn
+   * CustomerDevices updateManyAndReturn
    */
-  export type VehicleUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Vehicle
+     * Select specific fields to fetch from the CustomerDevices
      */
-    select?: VehicleSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: CustomerDevicesSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Vehicle
+     * Omit specific fields from the CustomerDevices
      */
-    omit?: VehicleOmit<ExtArgs> | null
+    omit?: CustomerDevicesOmit<ExtArgs> | null
     /**
-     * The data used to update Vehicles.
+     * The data used to update CustomerDevices.
      */
-    data: XOR<VehicleUpdateManyMutationInput, VehicleUncheckedUpdateManyInput>
+    data: XOR<CustomerDevicesUpdateManyMutationInput, CustomerDevicesUncheckedUpdateManyInput>
     /**
-     * Filter which Vehicles to update
+     * Filter which CustomerDevices to update
      */
-    where?: VehicleWhereInput
+    where?: CustomerDevicesWhereInput
     /**
-     * Limit how many Vehicles to update.
+     * Limit how many CustomerDevices to update.
      */
     limit?: number
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: VehicleIncludeUpdateManyAndReturn<ExtArgs> | null
+    include?: CustomerDevicesIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Vehicle upsert
+   * CustomerDevices upsert
    */
-  export type VehicleUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Vehicle
+     * Select specific fields to fetch from the CustomerDevices
      */
-    select?: VehicleSelect<ExtArgs> | null
+    select?: CustomerDevicesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Vehicle
+     * Omit specific fields from the CustomerDevices
      */
-    omit?: VehicleOmit<ExtArgs> | null
+    omit?: CustomerDevicesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: VehicleInclude<ExtArgs> | null
+    include?: CustomerDevicesInclude<ExtArgs> | null
     /**
-     * The filter to search for the Vehicle to update in case it exists.
+     * The filter to search for the CustomerDevices to update in case it exists.
      */
-    where: VehicleWhereUniqueInput
+    where: CustomerDevicesWhereUniqueInput
     /**
-     * In case the Vehicle found by the `where` argument doesn't exist, create a new Vehicle with this data.
+     * In case the CustomerDevices found by the `where` argument doesn't exist, create a new CustomerDevices with this data.
      */
-    create: XOR<VehicleCreateInput, VehicleUncheckedCreateInput>
+    create: XOR<CustomerDevicesCreateInput, CustomerDevicesUncheckedCreateInput>
     /**
-     * In case the Vehicle was found with the provided `where` argument, update it with this data.
+     * In case the CustomerDevices was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<VehicleUpdateInput, VehicleUncheckedUpdateInput>
+    update: XOR<CustomerDevicesUpdateInput, CustomerDevicesUncheckedUpdateInput>
   }
 
   /**
-   * Vehicle delete
+   * CustomerDevices delete
    */
-  export type VehicleDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Vehicle
+     * Select specific fields to fetch from the CustomerDevices
      */
-    select?: VehicleSelect<ExtArgs> | null
+    select?: CustomerDevicesSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Vehicle
+     * Omit specific fields from the CustomerDevices
      */
-    omit?: VehicleOmit<ExtArgs> | null
+    omit?: CustomerDevicesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: VehicleInclude<ExtArgs> | null
+    include?: CustomerDevicesInclude<ExtArgs> | null
     /**
-     * Filter which Vehicle to delete.
+     * Filter which CustomerDevices to delete.
      */
-    where: VehicleWhereUniqueInput
+    where: CustomerDevicesWhereUniqueInput
   }
 
   /**
-   * Vehicle deleteMany
+   * CustomerDevices deleteMany
    */
-  export type VehicleDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevicesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Vehicles to delete
+     * Filter which CustomerDevices to delete
      */
-    where?: VehicleWhereInput
+    where?: CustomerDevicesWhereInput
     /**
-     * Limit how many Vehicles to delete.
+     * Limit how many CustomerDevices to delete.
      */
     limit?: number
   }
 
   /**
-   * Vehicle without action
+   * CustomerDevices.Customer
    */
-  export type VehicleDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CustomerDevices$CustomerArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Vehicle
+     * Select specific fields to fetch from the Customer
      */
-    select?: VehicleSelect<ExtArgs> | null
+    select?: CustomerSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Vehicle
+     * Omit specific fields from the Customer
      */
-    omit?: VehicleOmit<ExtArgs> | null
+    omit?: CustomerOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: VehicleInclude<ExtArgs> | null
-  }
-
-
-  /**
-   * Model VehicleType
-   */
-
-  export type AggregateVehicleType = {
-    _count: VehicleTypeCountAggregateOutputType | null
-    _min: VehicleTypeMinAggregateOutputType | null
-    _max: VehicleTypeMaxAggregateOutputType | null
-  }
-
-  export type VehicleTypeMinAggregateOutputType = {
-    id: string | null
-    name: string | null
-    createdAt: Date | null
-    updatedAt: Date | null
-    deletedAt: Date | null
-  }
-
-  export type VehicleTypeMaxAggregateOutputType = {
-    id: string | null
-    name: string | null
-    createdAt: Date | null
-    updatedAt: Date | null
-    deletedAt: Date | null
-  }
-
-  export type VehicleTypeCountAggregateOutputType = {
-    id: number
-    name: number
-    createdAt: number
-    updatedAt: number
-    deletedAt: number
-    _all: number
-  }
-
-
-  export type VehicleTypeMinAggregateInputType = {
-    id?: true
-    name?: true
-    createdAt?: true
-    updatedAt?: true
-    deletedAt?: true
-  }
-
-  export type VehicleTypeMaxAggregateInputType = {
-    id?: true
-    name?: true
-    createdAt?: true
-    updatedAt?: true
-    deletedAt?: true
-  }
-
-  export type VehicleTypeCountAggregateInputType = {
-    id?: true
-    name?: true
-    createdAt?: true
-    updatedAt?: true
-    deletedAt?: true
-    _all?: true
-  }
-
-  export type VehicleTypeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which VehicleType to aggregate.
-     */
-    where?: VehicleTypeWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of VehicleTypes to fetch.
-     */
-    orderBy?: VehicleTypeOrderByWithRelationInput | VehicleTypeOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the start position
-     */
-    cursor?: VehicleTypeWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` VehicleTypes from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` VehicleTypes.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Count returned VehicleTypes
-    **/
-    _count?: true | VehicleTypeCountAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the minimum value
-    **/
-    _min?: VehicleTypeMinAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to find the maximum value
-    **/
-    _max?: VehicleTypeMaxAggregateInputType
-  }
-
-  export type GetVehicleTypeAggregateType<T extends VehicleTypeAggregateArgs> = {
-        [P in keyof T & keyof AggregateVehicleType]: P extends '_count' | 'count'
-      ? T[P] extends true
-        ? number
-        : GetScalarType<T[P], AggregateVehicleType[P]>
-      : GetScalarType<T[P], AggregateVehicleType[P]>
-  }
-
-
-
-
-  export type VehicleTypeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: VehicleTypeWhereInput
-    orderBy?: VehicleTypeOrderByWithAggregationInput | VehicleTypeOrderByWithAggregationInput[]
-    by: VehicleTypeScalarFieldEnum[] | VehicleTypeScalarFieldEnum
-    having?: VehicleTypeScalarWhereWithAggregatesInput
-    take?: number
-    skip?: number
-    _count?: VehicleTypeCountAggregateInputType | true
-    _min?: VehicleTypeMinAggregateInputType
-    _max?: VehicleTypeMaxAggregateInputType
-  }
-
-  export type VehicleTypeGroupByOutputType = {
-    id: string
-    name: string
-    createdAt: Date
-    updatedAt: Date
-    deletedAt: Date | null
-    _count: VehicleTypeCountAggregateOutputType | null
-    _min: VehicleTypeMinAggregateOutputType | null
-    _max: VehicleTypeMaxAggregateOutputType | null
-  }
-
-  type GetVehicleTypeGroupByPayload<T extends VehicleTypeGroupByArgs> = Prisma.PrismaPromise<
-    Array<
-      PickEnumerable<VehicleTypeGroupByOutputType, T['by']> &
-        {
-          [P in ((keyof T) & (keyof VehicleTypeGroupByOutputType))]: P extends '_count'
-            ? T[P] extends boolean
-              ? number
-              : GetScalarType<T[P], VehicleTypeGroupByOutputType[P]>
-            : GetScalarType<T[P], VehicleTypeGroupByOutputType[P]>
-        }
-      >
-    >
-
-
-  export type VehicleTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    deletedAt?: boolean
-    vehicles?: boolean | VehicleType$vehiclesArgs<ExtArgs>
-    _count?: boolean | VehicleTypeCountOutputTypeDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["vehicleType"]>
-
-  export type VehicleTypeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    deletedAt?: boolean
-  }, ExtArgs["result"]["vehicleType"]>
-
-  export type VehicleTypeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    id?: boolean
-    name?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    deletedAt?: boolean
-  }, ExtArgs["result"]["vehicleType"]>
-
-  export type VehicleTypeSelectScalar = {
-    id?: boolean
-    name?: boolean
-    createdAt?: boolean
-    updatedAt?: boolean
-    deletedAt?: boolean
-  }
-
-  export type VehicleTypeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["vehicleType"]>
-  export type VehicleTypeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    vehicles?: boolean | VehicleType$vehiclesArgs<ExtArgs>
-    _count?: boolean | VehicleTypeCountOutputTypeDefaultArgs<ExtArgs>
-  }
-  export type VehicleTypeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type VehicleTypeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-
-  export type $VehicleTypePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "VehicleType"
-    objects: {
-      vehicles: Prisma.$VehiclePayload<ExtArgs>[]
-    }
-    scalars: $Extensions.GetPayloadResult<{
-      id: string
-      name: string
-      createdAt: Date
-      updatedAt: Date
-      deletedAt: Date | null
-    }, ExtArgs["result"]["vehicleType"]>
-    composites: {}
-  }
-
-  type VehicleTypeGetPayload<S extends boolean | null | undefined | VehicleTypeDefaultArgs> = $Result.GetResult<Prisma.$VehicleTypePayload, S>
-
-  type VehicleTypeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<VehicleTypeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: VehicleTypeCountAggregateInputType | true
-    }
-
-  export interface VehicleTypeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['VehicleType'], meta: { name: 'VehicleType' } }
-    /**
-     * Find zero or one VehicleType that matches the filter.
-     * @param {VehicleTypeFindUniqueArgs} args - Arguments to find a VehicleType
-     * @example
-     * // Get one VehicleType
-     * const vehicleType = await prisma.vehicleType.findUnique({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUnique<T extends VehicleTypeFindUniqueArgs>(args: SelectSubset<T, VehicleTypeFindUniqueArgs<ExtArgs>>): Prisma__VehicleTypeClient<$Result.GetResult<Prisma.$VehicleTypePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find one VehicleType that matches the filter or throw an error with `error.code='P2025'`
-     * if no matches were found.
-     * @param {VehicleTypeFindUniqueOrThrowArgs} args - Arguments to find a VehicleType
-     * @example
-     * // Get one VehicleType
-     * const vehicleType = await prisma.vehicleType.findUniqueOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findUniqueOrThrow<T extends VehicleTypeFindUniqueOrThrowArgs>(args: SelectSubset<T, VehicleTypeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__VehicleTypeClient<$Result.GetResult<Prisma.$VehicleTypePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first VehicleType that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleTypeFindFirstArgs} args - Arguments to find a VehicleType
-     * @example
-     * // Get one VehicleType
-     * const vehicleType = await prisma.vehicleType.findFirst({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirst<T extends VehicleTypeFindFirstArgs>(args?: SelectSubset<T, VehicleTypeFindFirstArgs<ExtArgs>>): Prisma__VehicleTypeClient<$Result.GetResult<Prisma.$VehicleTypePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find the first VehicleType that matches the filter or
-     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleTypeFindFirstOrThrowArgs} args - Arguments to find a VehicleType
-     * @example
-     * // Get one VehicleType
-     * const vehicleType = await prisma.vehicleType.findFirstOrThrow({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     */
-    findFirstOrThrow<T extends VehicleTypeFindFirstOrThrowArgs>(args?: SelectSubset<T, VehicleTypeFindFirstOrThrowArgs<ExtArgs>>): Prisma__VehicleTypeClient<$Result.GetResult<Prisma.$VehicleTypePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Find zero or more VehicleTypes that matches the filter.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleTypeFindManyArgs} args - Arguments to filter and select certain fields only.
-     * @example
-     * // Get all VehicleTypes
-     * const vehicleTypes = await prisma.vehicleType.findMany()
-     * 
-     * // Get first 10 VehicleTypes
-     * const vehicleTypes = await prisma.vehicleType.findMany({ take: 10 })
-     * 
-     * // Only select the `id`
-     * const vehicleTypeWithIdOnly = await prisma.vehicleType.findMany({ select: { id: true } })
-     * 
-     */
-    findMany<T extends VehicleTypeFindManyArgs>(args?: SelectSubset<T, VehicleTypeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VehicleTypePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
-
-    /**
-     * Create a VehicleType.
-     * @param {VehicleTypeCreateArgs} args - Arguments to create a VehicleType.
-     * @example
-     * // Create one VehicleType
-     * const VehicleType = await prisma.vehicleType.create({
-     *   data: {
-     *     // ... data to create a VehicleType
-     *   }
-     * })
-     * 
-     */
-    create<T extends VehicleTypeCreateArgs>(args: SelectSubset<T, VehicleTypeCreateArgs<ExtArgs>>): Prisma__VehicleTypeClient<$Result.GetResult<Prisma.$VehicleTypePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Create many VehicleTypes.
-     * @param {VehicleTypeCreateManyArgs} args - Arguments to create many VehicleTypes.
-     * @example
-     * // Create many VehicleTypes
-     * const vehicleType = await prisma.vehicleType.createMany({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     *     
-     */
-    createMany<T extends VehicleTypeCreateManyArgs>(args?: SelectSubset<T, VehicleTypeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Create many VehicleTypes and returns the data saved in the database.
-     * @param {VehicleTypeCreateManyAndReturnArgs} args - Arguments to create many VehicleTypes.
-     * @example
-     * // Create many VehicleTypes
-     * const vehicleType = await prisma.vehicleType.createManyAndReturn({
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Create many VehicleTypes and only return the `id`
-     * const vehicleTypeWithIdOnly = await prisma.vehicleType.createManyAndReturn({
-     *   select: { id: true },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    createManyAndReturn<T extends VehicleTypeCreateManyAndReturnArgs>(args?: SelectSubset<T, VehicleTypeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VehicleTypePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Delete a VehicleType.
-     * @param {VehicleTypeDeleteArgs} args - Arguments to delete one VehicleType.
-     * @example
-     * // Delete one VehicleType
-     * const VehicleType = await prisma.vehicleType.delete({
-     *   where: {
-     *     // ... filter to delete one VehicleType
-     *   }
-     * })
-     * 
-     */
-    delete<T extends VehicleTypeDeleteArgs>(args: SelectSubset<T, VehicleTypeDeleteArgs<ExtArgs>>): Prisma__VehicleTypeClient<$Result.GetResult<Prisma.$VehicleTypePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Update one VehicleType.
-     * @param {VehicleTypeUpdateArgs} args - Arguments to update one VehicleType.
-     * @example
-     * // Update one VehicleType
-     * const vehicleType = await prisma.vehicleType.update({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    update<T extends VehicleTypeUpdateArgs>(args: SelectSubset<T, VehicleTypeUpdateArgs<ExtArgs>>): Prisma__VehicleTypeClient<$Result.GetResult<Prisma.$VehicleTypePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-    /**
-     * Delete zero or more VehicleTypes.
-     * @param {VehicleTypeDeleteManyArgs} args - Arguments to filter VehicleTypes to delete.
-     * @example
-     * // Delete a few VehicleTypes
-     * const { count } = await prisma.vehicleType.deleteMany({
-     *   where: {
-     *     // ... provide filter here
-     *   }
-     * })
-     * 
-     */
-    deleteMany<T extends VehicleTypeDeleteManyArgs>(args?: SelectSubset<T, VehicleTypeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more VehicleTypes.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleTypeUpdateManyArgs} args - Arguments to update one or more rows.
-     * @example
-     * // Update many VehicleTypes
-     * const vehicleType = await prisma.vehicleType.updateMany({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: {
-     *     // ... provide data here
-     *   }
-     * })
-     * 
-     */
-    updateMany<T extends VehicleTypeUpdateManyArgs>(args: SelectSubset<T, VehicleTypeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
-
-    /**
-     * Update zero or more VehicleTypes and returns the data updated in the database.
-     * @param {VehicleTypeUpdateManyAndReturnArgs} args - Arguments to update many VehicleTypes.
-     * @example
-     * // Update many VehicleTypes
-     * const vehicleType = await prisma.vehicleType.updateManyAndReturn({
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * 
-     * // Update zero or more VehicleTypes and only return the `id`
-     * const vehicleTypeWithIdOnly = await prisma.vehicleType.updateManyAndReturn({
-     *   select: { id: true },
-     *   where: {
-     *     // ... provide filter here
-     *   },
-     *   data: [
-     *     // ... provide data here
-     *   ]
-     * })
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * 
-     */
-    updateManyAndReturn<T extends VehicleTypeUpdateManyAndReturnArgs>(args: SelectSubset<T, VehicleTypeUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VehicleTypePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
-
-    /**
-     * Create or update one VehicleType.
-     * @param {VehicleTypeUpsertArgs} args - Arguments to update or create a VehicleType.
-     * @example
-     * // Update or create a VehicleType
-     * const vehicleType = await prisma.vehicleType.upsert({
-     *   create: {
-     *     // ... data to create a VehicleType
-     *   },
-     *   update: {
-     *     // ... in case it already exists, update
-     *   },
-     *   where: {
-     *     // ... the filter for the VehicleType we want to update
-     *   }
-     * })
-     */
-    upsert<T extends VehicleTypeUpsertArgs>(args: SelectSubset<T, VehicleTypeUpsertArgs<ExtArgs>>): Prisma__VehicleTypeClient<$Result.GetResult<Prisma.$VehicleTypePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
-
-
-    /**
-     * Count the number of VehicleTypes.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleTypeCountArgs} args - Arguments to filter VehicleTypes to count.
-     * @example
-     * // Count the number of VehicleTypes
-     * const count = await prisma.vehicleType.count({
-     *   where: {
-     *     // ... the filter for the VehicleTypes we want to count
-     *   }
-     * })
-    **/
-    count<T extends VehicleTypeCountArgs>(
-      args?: Subset<T, VehicleTypeCountArgs>,
-    ): Prisma.PrismaPromise<
-      T extends $Utils.Record<'select', any>
-        ? T['select'] extends true
-          ? number
-          : GetScalarType<T['select'], VehicleTypeCountAggregateOutputType>
-        : number
-    >
-
-    /**
-     * Allows you to perform aggregations operations on a VehicleType.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleTypeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
-     * @example
-     * // Ordered by age ascending
-     * // Where email contains prisma.io
-     * // Limited to the 10 users
-     * const aggregations = await prisma.user.aggregate({
-     *   _avg: {
-     *     age: true,
-     *   },
-     *   where: {
-     *     email: {
-     *       contains: "prisma.io",
-     *     },
-     *   },
-     *   orderBy: {
-     *     age: "asc",
-     *   },
-     *   take: 10,
-     * })
-    **/
-    aggregate<T extends VehicleTypeAggregateArgs>(args: Subset<T, VehicleTypeAggregateArgs>): Prisma.PrismaPromise<GetVehicleTypeAggregateType<T>>
-
-    /**
-     * Group by VehicleType.
-     * Note, that providing `undefined` is treated as the value not being there.
-     * Read more here: https://pris.ly/d/null-undefined
-     * @param {VehicleTypeGroupByArgs} args - Group by arguments.
-     * @example
-     * // Group by city, order by createdAt, get count
-     * const result = await prisma.user.groupBy({
-     *   by: ['city', 'createdAt'],
-     *   orderBy: {
-     *     createdAt: true
-     *   },
-     *   _count: {
-     *     _all: true
-     *   },
-     * })
-     * 
-    **/
-    groupBy<
-      T extends VehicleTypeGroupByArgs,
-      HasSelectOrTake extends Or<
-        Extends<'skip', Keys<T>>,
-        Extends<'take', Keys<T>>
-      >,
-      OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: VehicleTypeGroupByArgs['orderBy'] }
-        : { orderBy?: VehicleTypeGroupByArgs['orderBy'] },
-      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
-      ByFields extends MaybeTupleToUnion<T['by']>,
-      ByValid extends Has<ByFields, OrderFields>,
-      HavingFields extends GetHavingFields<T['having']>,
-      HavingValid extends Has<ByFields, HavingFields>,
-      ByEmpty extends T['by'] extends never[] ? True : False,
-      InputErrors extends ByEmpty extends True
-      ? `Error: "by" must not be empty.`
-      : HavingValid extends False
-      ? {
-          [P in HavingFields]: P extends ByFields
-            ? never
-            : P extends string
-            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
-            : [
-                Error,
-                'Field ',
-                P,
-                ` in "having" needs to be provided in "by"`,
-              ]
-        }[HavingFields]
-      : 'take' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "take", you also need to provide "orderBy"'
-      : 'skip' extends Keys<T>
-      ? 'orderBy' extends Keys<T>
-        ? ByValid extends True
-          ? {}
-          : {
-              [P in OrderFields]: P extends ByFields
-                ? never
-                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-            }[OrderFields]
-        : 'Error: If you provide "skip", you also need to provide "orderBy"'
-      : ByValid extends True
-      ? {}
-      : {
-          [P in OrderFields]: P extends ByFields
-            ? never
-            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
-        }[OrderFields]
-    >(args: SubsetIntersection<T, VehicleTypeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetVehicleTypeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
-  /**
-   * Fields of the VehicleType model
-   */
-  readonly fields: VehicleTypeFieldRefs;
+    include?: CustomerInclude<ExtArgs> | null
+    where?: CustomerWhereInput
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for VehicleType.
-   * Why is this prefixed with `Prisma__`?
-   * Because we want to prevent naming conflicts as mentioned in
-   * https://github.com/prisma/prisma-client-js/issues/707
+   * CustomerDevices without action
    */
-  export interface Prisma__VehicleTypeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
-    readonly [Symbol.toStringTag]: "PrismaPromise"
-    vehicles<T extends VehicleType$vehiclesArgs<ExtArgs> = {}>(args?: Subset<T, VehicleType$vehiclesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  export type CustomerDevicesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Attaches callbacks for the resolution and/or rejection of the Promise.
-     * @param onfulfilled The callback to execute when the Promise is resolved.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of which ever callback is executed.
+     * Select specific fields to fetch from the CustomerDevices
      */
-    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    select?: CustomerDevicesSelect<ExtArgs> | null
     /**
-     * Attaches a callback for only the rejection of the Promise.
-     * @param onrejected The callback to execute when the Promise is rejected.
-     * @returns A Promise for the completion of the callback.
+     * Omit specific fields from the CustomerDevices
      */
-    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
-    /**
-     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
-     * resolved value cannot be modified from the callback.
-     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
-     * @returns A Promise for the completion of the callback.
-     */
-    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
-  }
-
-
-
-
-  /**
-   * Fields of the VehicleType model
-   */
-  interface VehicleTypeFieldRefs {
-    readonly id: FieldRef<"VehicleType", 'String'>
-    readonly name: FieldRef<"VehicleType", 'String'>
-    readonly createdAt: FieldRef<"VehicleType", 'DateTime'>
-    readonly updatedAt: FieldRef<"VehicleType", 'DateTime'>
-    readonly deletedAt: FieldRef<"VehicleType", 'DateTime'>
-  }
-    
-
-  // Custom InputTypes
-  /**
-   * VehicleType findUnique
-   */
-  export type VehicleTypeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the VehicleType
-     */
-    select?: VehicleTypeSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the VehicleType
-     */
-    omit?: VehicleTypeOmit<ExtArgs> | null
+    omit?: CustomerDevicesOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: VehicleTypeInclude<ExtArgs> | null
-    /**
-     * Filter, which VehicleType to fetch.
-     */
-    where: VehicleTypeWhereUniqueInput
-  }
-
-  /**
-   * VehicleType findUniqueOrThrow
-   */
-  export type VehicleTypeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the VehicleType
-     */
-    select?: VehicleTypeSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the VehicleType
-     */
-    omit?: VehicleTypeOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: VehicleTypeInclude<ExtArgs> | null
-    /**
-     * Filter, which VehicleType to fetch.
-     */
-    where: VehicleTypeWhereUniqueInput
-  }
-
-  /**
-   * VehicleType findFirst
-   */
-  export type VehicleTypeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the VehicleType
-     */
-    select?: VehicleTypeSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the VehicleType
-     */
-    omit?: VehicleTypeOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: VehicleTypeInclude<ExtArgs> | null
-    /**
-     * Filter, which VehicleType to fetch.
-     */
-    where?: VehicleTypeWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of VehicleTypes to fetch.
-     */
-    orderBy?: VehicleTypeOrderByWithRelationInput | VehicleTypeOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for VehicleTypes.
-     */
-    cursor?: VehicleTypeWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` VehicleTypes from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` VehicleTypes.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of VehicleTypes.
-     */
-    distinct?: VehicleTypeScalarFieldEnum | VehicleTypeScalarFieldEnum[]
-  }
-
-  /**
-   * VehicleType findFirstOrThrow
-   */
-  export type VehicleTypeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the VehicleType
-     */
-    select?: VehicleTypeSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the VehicleType
-     */
-    omit?: VehicleTypeOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: VehicleTypeInclude<ExtArgs> | null
-    /**
-     * Filter, which VehicleType to fetch.
-     */
-    where?: VehicleTypeWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of VehicleTypes to fetch.
-     */
-    orderBy?: VehicleTypeOrderByWithRelationInput | VehicleTypeOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for searching for VehicleTypes.
-     */
-    cursor?: VehicleTypeWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` VehicleTypes from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` VehicleTypes.
-     */
-    skip?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
-     * 
-     * Filter by unique combinations of VehicleTypes.
-     */
-    distinct?: VehicleTypeScalarFieldEnum | VehicleTypeScalarFieldEnum[]
-  }
-
-  /**
-   * VehicleType findMany
-   */
-  export type VehicleTypeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the VehicleType
-     */
-    select?: VehicleTypeSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the VehicleType
-     */
-    omit?: VehicleTypeOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: VehicleTypeInclude<ExtArgs> | null
-    /**
-     * Filter, which VehicleTypes to fetch.
-     */
-    where?: VehicleTypeWhereInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
-     * 
-     * Determine the order of VehicleTypes to fetch.
-     */
-    orderBy?: VehicleTypeOrderByWithRelationInput | VehicleTypeOrderByWithRelationInput[]
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
-     * 
-     * Sets the position for listing VehicleTypes.
-     */
-    cursor?: VehicleTypeWhereUniqueInput
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Take `±n` VehicleTypes from the position of the cursor.
-     */
-    take?: number
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
-     * 
-     * Skip the first `n` VehicleTypes.
-     */
-    skip?: number
-    distinct?: VehicleTypeScalarFieldEnum | VehicleTypeScalarFieldEnum[]
-  }
-
-  /**
-   * VehicleType create
-   */
-  export type VehicleTypeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the VehicleType
-     */
-    select?: VehicleTypeSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the VehicleType
-     */
-    omit?: VehicleTypeOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: VehicleTypeInclude<ExtArgs> | null
-    /**
-     * The data needed to create a VehicleType.
-     */
-    data: XOR<VehicleTypeCreateInput, VehicleTypeUncheckedCreateInput>
-  }
-
-  /**
-   * VehicleType createMany
-   */
-  export type VehicleTypeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many VehicleTypes.
-     */
-    data: VehicleTypeCreateManyInput | VehicleTypeCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * VehicleType createManyAndReturn
-   */
-  export type VehicleTypeCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the VehicleType
-     */
-    select?: VehicleTypeSelectCreateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the VehicleType
-     */
-    omit?: VehicleTypeOmit<ExtArgs> | null
-    /**
-     * The data used to create many VehicleTypes.
-     */
-    data: VehicleTypeCreateManyInput | VehicleTypeCreateManyInput[]
-    skipDuplicates?: boolean
-  }
-
-  /**
-   * VehicleType update
-   */
-  export type VehicleTypeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the VehicleType
-     */
-    select?: VehicleTypeSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the VehicleType
-     */
-    omit?: VehicleTypeOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: VehicleTypeInclude<ExtArgs> | null
-    /**
-     * The data needed to update a VehicleType.
-     */
-    data: XOR<VehicleTypeUpdateInput, VehicleTypeUncheckedUpdateInput>
-    /**
-     * Choose, which VehicleType to update.
-     */
-    where: VehicleTypeWhereUniqueInput
-  }
-
-  /**
-   * VehicleType updateMany
-   */
-  export type VehicleTypeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to update VehicleTypes.
-     */
-    data: XOR<VehicleTypeUpdateManyMutationInput, VehicleTypeUncheckedUpdateManyInput>
-    /**
-     * Filter which VehicleTypes to update
-     */
-    where?: VehicleTypeWhereInput
-    /**
-     * Limit how many VehicleTypes to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * VehicleType updateManyAndReturn
-   */
-  export type VehicleTypeUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the VehicleType
-     */
-    select?: VehicleTypeSelectUpdateManyAndReturn<ExtArgs> | null
-    /**
-     * Omit specific fields from the VehicleType
-     */
-    omit?: VehicleTypeOmit<ExtArgs> | null
-    /**
-     * The data used to update VehicleTypes.
-     */
-    data: XOR<VehicleTypeUpdateManyMutationInput, VehicleTypeUncheckedUpdateManyInput>
-    /**
-     * Filter which VehicleTypes to update
-     */
-    where?: VehicleTypeWhereInput
-    /**
-     * Limit how many VehicleTypes to update.
-     */
-    limit?: number
-  }
-
-  /**
-   * VehicleType upsert
-   */
-  export type VehicleTypeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the VehicleType
-     */
-    select?: VehicleTypeSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the VehicleType
-     */
-    omit?: VehicleTypeOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: VehicleTypeInclude<ExtArgs> | null
-    /**
-     * The filter to search for the VehicleType to update in case it exists.
-     */
-    where: VehicleTypeWhereUniqueInput
-    /**
-     * In case the VehicleType found by the `where` argument doesn't exist, create a new VehicleType with this data.
-     */
-    create: XOR<VehicleTypeCreateInput, VehicleTypeUncheckedCreateInput>
-    /**
-     * In case the VehicleType was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<VehicleTypeUpdateInput, VehicleTypeUncheckedUpdateInput>
-  }
-
-  /**
-   * VehicleType delete
-   */
-  export type VehicleTypeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the VehicleType
-     */
-    select?: VehicleTypeSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the VehicleType
-     */
-    omit?: VehicleTypeOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: VehicleTypeInclude<ExtArgs> | null
-    /**
-     * Filter which VehicleType to delete.
-     */
-    where: VehicleTypeWhereUniqueInput
-  }
-
-  /**
-   * VehicleType deleteMany
-   */
-  export type VehicleTypeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which VehicleTypes to delete
-     */
-    where?: VehicleTypeWhereInput
-    /**
-     * Limit how many VehicleTypes to delete.
-     */
-    limit?: number
-  }
-
-  /**
-   * VehicleType.vehicles
-   */
-  export type VehicleType$vehiclesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Vehicle
-     */
-    select?: VehicleSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Vehicle
-     */
-    omit?: VehicleOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: VehicleInclude<ExtArgs> | null
-    where?: VehicleWhereInput
-    orderBy?: VehicleOrderByWithRelationInput | VehicleOrderByWithRelationInput[]
-    cursor?: VehicleWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: VehicleScalarFieldEnum | VehicleScalarFieldEnum[]
-  }
-
-  /**
-   * VehicleType without action
-   */
-  export type VehicleTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the VehicleType
-     */
-    select?: VehicleTypeSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the VehicleType
-     */
-    omit?: VehicleTypeOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: VehicleTypeInclude<ExtArgs> | null
+    include?: CustomerDevicesInclude<ExtArgs> | null
   }
 
 
@@ -4256,27 +3241,20 @@ export namespace Prisma {
   export type CustomerScalarFieldEnum = (typeof CustomerScalarFieldEnum)[keyof typeof CustomerScalarFieldEnum]
 
 
-  export const VehicleScalarFieldEnum: {
+  export const CustomerDevicesScalarFieldEnum: {
     id: 'id',
-    typeId: 'typeId',
-    licensePlate: 'licensePlate',
+    customerId: 'customerId',
+    token: 'token',
+    deviceId: 'deviceId',
+    osType: 'osType',
+    osVersion: 'osVersion',
+    appVersion: 'appVersion',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
     deletedAt: 'deletedAt'
   };
 
-  export type VehicleScalarFieldEnum = (typeof VehicleScalarFieldEnum)[keyof typeof VehicleScalarFieldEnum]
-
-
-  export const VehicleTypeScalarFieldEnum: {
-    id: 'id',
-    name: 'name',
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt',
-    deletedAt: 'deletedAt'
-  };
-
-  export type VehicleTypeScalarFieldEnum = (typeof VehicleTypeScalarFieldEnum)[keyof typeof VehicleTypeScalarFieldEnum]
+  export type CustomerDevicesScalarFieldEnum = (typeof CustomerDevicesScalarFieldEnum)[keyof typeof CustomerDevicesScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -4363,6 +3341,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Customer"> | Date | string
     updatedAt?: DateTimeFilter<"Customer"> | Date | string
     deletedAt?: DateTimeNullableFilter<"Customer"> | Date | string | null
+    devices?: CustomerDevicesListRelationFilter
   }
 
   export type CustomerOrderByWithRelationInput = {
@@ -4372,6 +3351,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     deletedAt?: SortOrderInput | SortOrder
+    devices?: CustomerDevicesOrderByRelationAggregateInput
   }
 
   export type CustomerWhereUniqueInput = Prisma.AtLeast<{
@@ -4384,6 +3364,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Customer"> | Date | string
     updatedAt?: DateTimeFilter<"Customer"> | Date | string
     deletedAt?: DateTimeNullableFilter<"Customer"> | Date | string | null
+    devices?: CustomerDevicesListRelationFilter
   }, "id" | "email">
 
   export type CustomerOrderByWithAggregationInput = {
@@ -4410,119 +3391,84 @@ export namespace Prisma {
     deletedAt?: DateTimeNullableWithAggregatesFilter<"Customer"> | Date | string | null
   }
 
-  export type VehicleWhereInput = {
-    AND?: VehicleWhereInput | VehicleWhereInput[]
-    OR?: VehicleWhereInput[]
-    NOT?: VehicleWhereInput | VehicleWhereInput[]
-    id?: StringFilter<"Vehicle"> | string
-    typeId?: StringFilter<"Vehicle"> | string
-    licensePlate?: StringFilter<"Vehicle"> | string
-    createdAt?: DateTimeFilter<"Vehicle"> | Date | string
-    updatedAt?: DateTimeFilter<"Vehicle"> | Date | string
-    deletedAt?: DateTimeNullableFilter<"Vehicle"> | Date | string | null
-    type?: XOR<VehicleTypeScalarRelationFilter, VehicleTypeWhereInput>
+  export type CustomerDevicesWhereInput = {
+    AND?: CustomerDevicesWhereInput | CustomerDevicesWhereInput[]
+    OR?: CustomerDevicesWhereInput[]
+    NOT?: CustomerDevicesWhereInput | CustomerDevicesWhereInput[]
+    id?: StringFilter<"CustomerDevices"> | string
+    customerId?: StringFilter<"CustomerDevices"> | string
+    token?: StringFilter<"CustomerDevices"> | string
+    deviceId?: StringFilter<"CustomerDevices"> | string
+    osType?: StringFilter<"CustomerDevices"> | string
+    osVersion?: StringFilter<"CustomerDevices"> | string
+    appVersion?: StringFilter<"CustomerDevices"> | string
+    createdAt?: DateTimeFilter<"CustomerDevices"> | Date | string
+    updatedAt?: DateTimeFilter<"CustomerDevices"> | Date | string
+    deletedAt?: DateTimeNullableFilter<"CustomerDevices"> | Date | string | null
+    Customer?: XOR<CustomerNullableScalarRelationFilter, CustomerWhereInput> | null
   }
 
-  export type VehicleOrderByWithRelationInput = {
+  export type CustomerDevicesOrderByWithRelationInput = {
     id?: SortOrder
-    typeId?: SortOrder
-    licensePlate?: SortOrder
+    customerId?: SortOrder
+    token?: SortOrder
+    deviceId?: SortOrder
+    osType?: SortOrder
+    osVersion?: SortOrder
+    appVersion?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     deletedAt?: SortOrderInput | SortOrder
-    type?: VehicleTypeOrderByWithRelationInput
+    Customer?: CustomerOrderByWithRelationInput
   }
 
-  export type VehicleWhereUniqueInput = Prisma.AtLeast<{
+  export type CustomerDevicesWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    licensePlate?: string
-    AND?: VehicleWhereInput | VehicleWhereInput[]
-    OR?: VehicleWhereInput[]
-    NOT?: VehicleWhereInput | VehicleWhereInput[]
-    typeId?: StringFilter<"Vehicle"> | string
-    createdAt?: DateTimeFilter<"Vehicle"> | Date | string
-    updatedAt?: DateTimeFilter<"Vehicle"> | Date | string
-    deletedAt?: DateTimeNullableFilter<"Vehicle"> | Date | string | null
-    type?: XOR<VehicleTypeScalarRelationFilter, VehicleTypeWhereInput>
-  }, "id" | "licensePlate">
+    AND?: CustomerDevicesWhereInput | CustomerDevicesWhereInput[]
+    OR?: CustomerDevicesWhereInput[]
+    NOT?: CustomerDevicesWhereInput | CustomerDevicesWhereInput[]
+    customerId?: StringFilter<"CustomerDevices"> | string
+    token?: StringFilter<"CustomerDevices"> | string
+    deviceId?: StringFilter<"CustomerDevices"> | string
+    osType?: StringFilter<"CustomerDevices"> | string
+    osVersion?: StringFilter<"CustomerDevices"> | string
+    appVersion?: StringFilter<"CustomerDevices"> | string
+    createdAt?: DateTimeFilter<"CustomerDevices"> | Date | string
+    updatedAt?: DateTimeFilter<"CustomerDevices"> | Date | string
+    deletedAt?: DateTimeNullableFilter<"CustomerDevices"> | Date | string | null
+    Customer?: XOR<CustomerNullableScalarRelationFilter, CustomerWhereInput> | null
+  }, "id">
 
-  export type VehicleOrderByWithAggregationInput = {
+  export type CustomerDevicesOrderByWithAggregationInput = {
     id?: SortOrder
-    typeId?: SortOrder
-    licensePlate?: SortOrder
+    customerId?: SortOrder
+    token?: SortOrder
+    deviceId?: SortOrder
+    osType?: SortOrder
+    osVersion?: SortOrder
+    appVersion?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     deletedAt?: SortOrderInput | SortOrder
-    _count?: VehicleCountOrderByAggregateInput
-    _max?: VehicleMaxOrderByAggregateInput
-    _min?: VehicleMinOrderByAggregateInput
+    _count?: CustomerDevicesCountOrderByAggregateInput
+    _max?: CustomerDevicesMaxOrderByAggregateInput
+    _min?: CustomerDevicesMinOrderByAggregateInput
   }
 
-  export type VehicleScalarWhereWithAggregatesInput = {
-    AND?: VehicleScalarWhereWithAggregatesInput | VehicleScalarWhereWithAggregatesInput[]
-    OR?: VehicleScalarWhereWithAggregatesInput[]
-    NOT?: VehicleScalarWhereWithAggregatesInput | VehicleScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Vehicle"> | string
-    typeId?: StringWithAggregatesFilter<"Vehicle"> | string
-    licensePlate?: StringWithAggregatesFilter<"Vehicle"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"Vehicle"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"Vehicle"> | Date | string
-    deletedAt?: DateTimeNullableWithAggregatesFilter<"Vehicle"> | Date | string | null
-  }
-
-  export type VehicleTypeWhereInput = {
-    AND?: VehicleTypeWhereInput | VehicleTypeWhereInput[]
-    OR?: VehicleTypeWhereInput[]
-    NOT?: VehicleTypeWhereInput | VehicleTypeWhereInput[]
-    id?: StringFilter<"VehicleType"> | string
-    name?: StringFilter<"VehicleType"> | string
-    createdAt?: DateTimeFilter<"VehicleType"> | Date | string
-    updatedAt?: DateTimeFilter<"VehicleType"> | Date | string
-    deletedAt?: DateTimeNullableFilter<"VehicleType"> | Date | string | null
-    vehicles?: VehicleListRelationFilter
-  }
-
-  export type VehicleTypeOrderByWithRelationInput = {
-    id?: SortOrder
-    name?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    deletedAt?: SortOrderInput | SortOrder
-    vehicles?: VehicleOrderByRelationAggregateInput
-  }
-
-  export type VehicleTypeWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
-    name?: string
-    AND?: VehicleTypeWhereInput | VehicleTypeWhereInput[]
-    OR?: VehicleTypeWhereInput[]
-    NOT?: VehicleTypeWhereInput | VehicleTypeWhereInput[]
-    createdAt?: DateTimeFilter<"VehicleType"> | Date | string
-    updatedAt?: DateTimeFilter<"VehicleType"> | Date | string
-    deletedAt?: DateTimeNullableFilter<"VehicleType"> | Date | string | null
-    vehicles?: VehicleListRelationFilter
-  }, "id" | "name">
-
-  export type VehicleTypeOrderByWithAggregationInput = {
-    id?: SortOrder
-    name?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    deletedAt?: SortOrderInput | SortOrder
-    _count?: VehicleTypeCountOrderByAggregateInput
-    _max?: VehicleTypeMaxOrderByAggregateInput
-    _min?: VehicleTypeMinOrderByAggregateInput
-  }
-
-  export type VehicleTypeScalarWhereWithAggregatesInput = {
-    AND?: VehicleTypeScalarWhereWithAggregatesInput | VehicleTypeScalarWhereWithAggregatesInput[]
-    OR?: VehicleTypeScalarWhereWithAggregatesInput[]
-    NOT?: VehicleTypeScalarWhereWithAggregatesInput | VehicleTypeScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"VehicleType"> | string
-    name?: StringWithAggregatesFilter<"VehicleType"> | string
-    createdAt?: DateTimeWithAggregatesFilter<"VehicleType"> | Date | string
-    updatedAt?: DateTimeWithAggregatesFilter<"VehicleType"> | Date | string
-    deletedAt?: DateTimeNullableWithAggregatesFilter<"VehicleType"> | Date | string | null
+  export type CustomerDevicesScalarWhereWithAggregatesInput = {
+    AND?: CustomerDevicesScalarWhereWithAggregatesInput | CustomerDevicesScalarWhereWithAggregatesInput[]
+    OR?: CustomerDevicesScalarWhereWithAggregatesInput[]
+    NOT?: CustomerDevicesScalarWhereWithAggregatesInput | CustomerDevicesScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"CustomerDevices"> | string
+    customerId?: StringWithAggregatesFilter<"CustomerDevices"> | string
+    token?: StringWithAggregatesFilter<"CustomerDevices"> | string
+    deviceId?: StringWithAggregatesFilter<"CustomerDevices"> | string
+    osType?: StringWithAggregatesFilter<"CustomerDevices"> | string
+    osVersion?: StringWithAggregatesFilter<"CustomerDevices"> | string
+    appVersion?: StringWithAggregatesFilter<"CustomerDevices"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"CustomerDevices"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"CustomerDevices"> | Date | string
+    deletedAt?: DateTimeNullableWithAggregatesFilter<"CustomerDevices"> | Date | string | null
   }
 
   export type CustomerCreateInput = {
@@ -4532,6 +3478,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
+    devices?: CustomerDevicesCreateNestedManyWithoutCustomerInput
   }
 
   export type CustomerUncheckedCreateInput = {
@@ -4541,6 +3488,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
+    devices?: CustomerDevicesUncheckedCreateNestedManyWithoutCustomerInput
   }
 
   export type CustomerUpdateInput = {
@@ -4550,6 +3498,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    devices?: CustomerDevicesUpdateManyWithoutCustomerNestedInput
   }
 
   export type CustomerUncheckedUpdateInput = {
@@ -4559,6 +3508,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    devices?: CustomerDevicesUncheckedUpdateManyWithoutCustomerNestedInput
   }
 
   export type CustomerCreateManyInput = {
@@ -4588,123 +3538,91 @@ export namespace Prisma {
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
-  export type VehicleCreateInput = {
+  export type CustomerDevicesCreateInput = {
     id?: string
-    licensePlate: string
+    token: string
+    deviceId: string
+    osType: string
+    osVersion: string
+    appVersion: string
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
-    type: VehicleTypeCreateNestedOneWithoutVehiclesInput
+    Customer?: CustomerCreateNestedOneWithoutDevicesInput
   }
 
-  export type VehicleUncheckedCreateInput = {
+  export type CustomerDevicesUncheckedCreateInput = {
     id?: string
-    typeId: string
-    licensePlate: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    deletedAt?: Date | string | null
-  }
-
-  export type VehicleUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    licensePlate?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    type?: VehicleTypeUpdateOneRequiredWithoutVehiclesNestedInput
-  }
-
-  export type VehicleUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    typeId?: StringFieldUpdateOperationsInput | string
-    licensePlate?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type VehicleCreateManyInput = {
-    id?: string
-    typeId: string
-    licensePlate: string
+    customerId: string
+    token: string
+    deviceId: string
+    osType: string
+    osVersion: string
+    appVersion: string
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
   }
 
-  export type VehicleUpdateManyMutationInput = {
+  export type CustomerDevicesUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    licensePlate?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    deviceId?: StringFieldUpdateOperationsInput | string
+    osType?: StringFieldUpdateOperationsInput | string
+    osVersion?: StringFieldUpdateOperationsInput | string
+    appVersion?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    Customer?: CustomerUpdateOneWithoutDevicesNestedInput
+  }
+
+  export type CustomerDevicesUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    customerId?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    deviceId?: StringFieldUpdateOperationsInput | string
+    osType?: StringFieldUpdateOperationsInput | string
+    osVersion?: StringFieldUpdateOperationsInput | string
+    appVersion?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
-  export type VehicleUncheckedUpdateManyInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    typeId?: StringFieldUpdateOperationsInput | string
-    licensePlate?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type VehicleTypeCreateInput = {
+  export type CustomerDevicesCreateManyInput = {
     id?: string
-    name: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    deletedAt?: Date | string | null
-    vehicles?: VehicleCreateNestedManyWithoutTypeInput
-  }
-
-  export type VehicleTypeUncheckedCreateInput = {
-    id?: string
-    name: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    deletedAt?: Date | string | null
-    vehicles?: VehicleUncheckedCreateNestedManyWithoutTypeInput
-  }
-
-  export type VehicleTypeUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    vehicles?: VehicleUpdateManyWithoutTypeNestedInput
-  }
-
-  export type VehicleTypeUncheckedUpdateInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    vehicles?: VehicleUncheckedUpdateManyWithoutTypeNestedInput
-  }
-
-  export type VehicleTypeCreateManyInput = {
-    id?: string
-    name: string
+    customerId: string
+    token: string
+    deviceId: string
+    osType: string
+    osVersion: string
+    appVersion: string
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
   }
 
-  export type VehicleTypeUpdateManyMutationInput = {
+  export type CustomerDevicesUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    deviceId?: StringFieldUpdateOperationsInput | string
+    osType?: StringFieldUpdateOperationsInput | string
+    osVersion?: StringFieldUpdateOperationsInput | string
+    appVersion?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
-  export type VehicleTypeUncheckedUpdateManyInput = {
+  export type CustomerDevicesUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
+    customerId?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    deviceId?: StringFieldUpdateOperationsInput | string
+    osType?: StringFieldUpdateOperationsInput | string
+    osVersion?: StringFieldUpdateOperationsInput | string
+    appVersion?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -4762,9 +3680,19 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
+  export type CustomerDevicesListRelationFilter = {
+    every?: CustomerDevicesWhereInput
+    some?: CustomerDevicesWhereInput
+    none?: CustomerDevicesWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
+  }
+
+  export type CustomerDevicesOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type CustomerCountOrderByAggregateInput = {
@@ -4858,70 +3786,62 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
-  export type VehicleTypeScalarRelationFilter = {
-    is?: VehicleTypeWhereInput
-    isNot?: VehicleTypeWhereInput
+  export type CustomerNullableScalarRelationFilter = {
+    is?: CustomerWhereInput | null
+    isNot?: CustomerWhereInput | null
   }
 
-  export type VehicleCountOrderByAggregateInput = {
+  export type CustomerDevicesCountOrderByAggregateInput = {
     id?: SortOrder
-    typeId?: SortOrder
-    licensePlate?: SortOrder
+    customerId?: SortOrder
+    token?: SortOrder
+    deviceId?: SortOrder
+    osType?: SortOrder
+    osVersion?: SortOrder
+    appVersion?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     deletedAt?: SortOrder
   }
 
-  export type VehicleMaxOrderByAggregateInput = {
+  export type CustomerDevicesMaxOrderByAggregateInput = {
     id?: SortOrder
-    typeId?: SortOrder
-    licensePlate?: SortOrder
+    customerId?: SortOrder
+    token?: SortOrder
+    deviceId?: SortOrder
+    osType?: SortOrder
+    osVersion?: SortOrder
+    appVersion?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     deletedAt?: SortOrder
   }
 
-  export type VehicleMinOrderByAggregateInput = {
+  export type CustomerDevicesMinOrderByAggregateInput = {
     id?: SortOrder
-    typeId?: SortOrder
-    licensePlate?: SortOrder
+    customerId?: SortOrder
+    token?: SortOrder
+    deviceId?: SortOrder
+    osType?: SortOrder
+    osVersion?: SortOrder
+    appVersion?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     deletedAt?: SortOrder
   }
 
-  export type VehicleListRelationFilter = {
-    every?: VehicleWhereInput
-    some?: VehicleWhereInput
-    none?: VehicleWhereInput
+  export type CustomerDevicesCreateNestedManyWithoutCustomerInput = {
+    create?: XOR<CustomerDevicesCreateWithoutCustomerInput, CustomerDevicesUncheckedCreateWithoutCustomerInput> | CustomerDevicesCreateWithoutCustomerInput[] | CustomerDevicesUncheckedCreateWithoutCustomerInput[]
+    connectOrCreate?: CustomerDevicesCreateOrConnectWithoutCustomerInput | CustomerDevicesCreateOrConnectWithoutCustomerInput[]
+    createMany?: CustomerDevicesCreateManyCustomerInputEnvelope
+    connect?: CustomerDevicesWhereUniqueInput | CustomerDevicesWhereUniqueInput[]
   }
 
-  export type VehicleOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
-  export type VehicleTypeCountOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    deletedAt?: SortOrder
-  }
-
-  export type VehicleTypeMaxOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    deletedAt?: SortOrder
-  }
-
-  export type VehicleTypeMinOrderByAggregateInput = {
-    id?: SortOrder
-    name?: SortOrder
-    createdAt?: SortOrder
-    updatedAt?: SortOrder
-    deletedAt?: SortOrder
+  export type CustomerDevicesUncheckedCreateNestedManyWithoutCustomerInput = {
+    create?: XOR<CustomerDevicesCreateWithoutCustomerInput, CustomerDevicesUncheckedCreateWithoutCustomerInput> | CustomerDevicesCreateWithoutCustomerInput[] | CustomerDevicesUncheckedCreateWithoutCustomerInput[]
+    connectOrCreate?: CustomerDevicesCreateOrConnectWithoutCustomerInput | CustomerDevicesCreateOrConnectWithoutCustomerInput[]
+    createMany?: CustomerDevicesCreateManyCustomerInputEnvelope
+    connect?: CustomerDevicesWhereUniqueInput | CustomerDevicesWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -4940,60 +3860,48 @@ export namespace Prisma {
     set?: Date | string | null
   }
 
-  export type VehicleTypeCreateNestedOneWithoutVehiclesInput = {
-    create?: XOR<VehicleTypeCreateWithoutVehiclesInput, VehicleTypeUncheckedCreateWithoutVehiclesInput>
-    connectOrCreate?: VehicleTypeCreateOrConnectWithoutVehiclesInput
-    connect?: VehicleTypeWhereUniqueInput
+  export type CustomerDevicesUpdateManyWithoutCustomerNestedInput = {
+    create?: XOR<CustomerDevicesCreateWithoutCustomerInput, CustomerDevicesUncheckedCreateWithoutCustomerInput> | CustomerDevicesCreateWithoutCustomerInput[] | CustomerDevicesUncheckedCreateWithoutCustomerInput[]
+    connectOrCreate?: CustomerDevicesCreateOrConnectWithoutCustomerInput | CustomerDevicesCreateOrConnectWithoutCustomerInput[]
+    upsert?: CustomerDevicesUpsertWithWhereUniqueWithoutCustomerInput | CustomerDevicesUpsertWithWhereUniqueWithoutCustomerInput[]
+    createMany?: CustomerDevicesCreateManyCustomerInputEnvelope
+    set?: CustomerDevicesWhereUniqueInput | CustomerDevicesWhereUniqueInput[]
+    disconnect?: CustomerDevicesWhereUniqueInput | CustomerDevicesWhereUniqueInput[]
+    delete?: CustomerDevicesWhereUniqueInput | CustomerDevicesWhereUniqueInput[]
+    connect?: CustomerDevicesWhereUniqueInput | CustomerDevicesWhereUniqueInput[]
+    update?: CustomerDevicesUpdateWithWhereUniqueWithoutCustomerInput | CustomerDevicesUpdateWithWhereUniqueWithoutCustomerInput[]
+    updateMany?: CustomerDevicesUpdateManyWithWhereWithoutCustomerInput | CustomerDevicesUpdateManyWithWhereWithoutCustomerInput[]
+    deleteMany?: CustomerDevicesScalarWhereInput | CustomerDevicesScalarWhereInput[]
   }
 
-  export type VehicleTypeUpdateOneRequiredWithoutVehiclesNestedInput = {
-    create?: XOR<VehicleTypeCreateWithoutVehiclesInput, VehicleTypeUncheckedCreateWithoutVehiclesInput>
-    connectOrCreate?: VehicleTypeCreateOrConnectWithoutVehiclesInput
-    upsert?: VehicleTypeUpsertWithoutVehiclesInput
-    connect?: VehicleTypeWhereUniqueInput
-    update?: XOR<XOR<VehicleTypeUpdateToOneWithWhereWithoutVehiclesInput, VehicleTypeUpdateWithoutVehiclesInput>, VehicleTypeUncheckedUpdateWithoutVehiclesInput>
+  export type CustomerDevicesUncheckedUpdateManyWithoutCustomerNestedInput = {
+    create?: XOR<CustomerDevicesCreateWithoutCustomerInput, CustomerDevicesUncheckedCreateWithoutCustomerInput> | CustomerDevicesCreateWithoutCustomerInput[] | CustomerDevicesUncheckedCreateWithoutCustomerInput[]
+    connectOrCreate?: CustomerDevicesCreateOrConnectWithoutCustomerInput | CustomerDevicesCreateOrConnectWithoutCustomerInput[]
+    upsert?: CustomerDevicesUpsertWithWhereUniqueWithoutCustomerInput | CustomerDevicesUpsertWithWhereUniqueWithoutCustomerInput[]
+    createMany?: CustomerDevicesCreateManyCustomerInputEnvelope
+    set?: CustomerDevicesWhereUniqueInput | CustomerDevicesWhereUniqueInput[]
+    disconnect?: CustomerDevicesWhereUniqueInput | CustomerDevicesWhereUniqueInput[]
+    delete?: CustomerDevicesWhereUniqueInput | CustomerDevicesWhereUniqueInput[]
+    connect?: CustomerDevicesWhereUniqueInput | CustomerDevicesWhereUniqueInput[]
+    update?: CustomerDevicesUpdateWithWhereUniqueWithoutCustomerInput | CustomerDevicesUpdateWithWhereUniqueWithoutCustomerInput[]
+    updateMany?: CustomerDevicesUpdateManyWithWhereWithoutCustomerInput | CustomerDevicesUpdateManyWithWhereWithoutCustomerInput[]
+    deleteMany?: CustomerDevicesScalarWhereInput | CustomerDevicesScalarWhereInput[]
   }
 
-  export type VehicleCreateNestedManyWithoutTypeInput = {
-    create?: XOR<VehicleCreateWithoutTypeInput, VehicleUncheckedCreateWithoutTypeInput> | VehicleCreateWithoutTypeInput[] | VehicleUncheckedCreateWithoutTypeInput[]
-    connectOrCreate?: VehicleCreateOrConnectWithoutTypeInput | VehicleCreateOrConnectWithoutTypeInput[]
-    createMany?: VehicleCreateManyTypeInputEnvelope
-    connect?: VehicleWhereUniqueInput | VehicleWhereUniqueInput[]
+  export type CustomerCreateNestedOneWithoutDevicesInput = {
+    create?: XOR<CustomerCreateWithoutDevicesInput, CustomerUncheckedCreateWithoutDevicesInput>
+    connectOrCreate?: CustomerCreateOrConnectWithoutDevicesInput
+    connect?: CustomerWhereUniqueInput
   }
 
-  export type VehicleUncheckedCreateNestedManyWithoutTypeInput = {
-    create?: XOR<VehicleCreateWithoutTypeInput, VehicleUncheckedCreateWithoutTypeInput> | VehicleCreateWithoutTypeInput[] | VehicleUncheckedCreateWithoutTypeInput[]
-    connectOrCreate?: VehicleCreateOrConnectWithoutTypeInput | VehicleCreateOrConnectWithoutTypeInput[]
-    createMany?: VehicleCreateManyTypeInputEnvelope
-    connect?: VehicleWhereUniqueInput | VehicleWhereUniqueInput[]
-  }
-
-  export type VehicleUpdateManyWithoutTypeNestedInput = {
-    create?: XOR<VehicleCreateWithoutTypeInput, VehicleUncheckedCreateWithoutTypeInput> | VehicleCreateWithoutTypeInput[] | VehicleUncheckedCreateWithoutTypeInput[]
-    connectOrCreate?: VehicleCreateOrConnectWithoutTypeInput | VehicleCreateOrConnectWithoutTypeInput[]
-    upsert?: VehicleUpsertWithWhereUniqueWithoutTypeInput | VehicleUpsertWithWhereUniqueWithoutTypeInput[]
-    createMany?: VehicleCreateManyTypeInputEnvelope
-    set?: VehicleWhereUniqueInput | VehicleWhereUniqueInput[]
-    disconnect?: VehicleWhereUniqueInput | VehicleWhereUniqueInput[]
-    delete?: VehicleWhereUniqueInput | VehicleWhereUniqueInput[]
-    connect?: VehicleWhereUniqueInput | VehicleWhereUniqueInput[]
-    update?: VehicleUpdateWithWhereUniqueWithoutTypeInput | VehicleUpdateWithWhereUniqueWithoutTypeInput[]
-    updateMany?: VehicleUpdateManyWithWhereWithoutTypeInput | VehicleUpdateManyWithWhereWithoutTypeInput[]
-    deleteMany?: VehicleScalarWhereInput | VehicleScalarWhereInput[]
-  }
-
-  export type VehicleUncheckedUpdateManyWithoutTypeNestedInput = {
-    create?: XOR<VehicleCreateWithoutTypeInput, VehicleUncheckedCreateWithoutTypeInput> | VehicleCreateWithoutTypeInput[] | VehicleUncheckedCreateWithoutTypeInput[]
-    connectOrCreate?: VehicleCreateOrConnectWithoutTypeInput | VehicleCreateOrConnectWithoutTypeInput[]
-    upsert?: VehicleUpsertWithWhereUniqueWithoutTypeInput | VehicleUpsertWithWhereUniqueWithoutTypeInput[]
-    createMany?: VehicleCreateManyTypeInputEnvelope
-    set?: VehicleWhereUniqueInput | VehicleWhereUniqueInput[]
-    disconnect?: VehicleWhereUniqueInput | VehicleWhereUniqueInput[]
-    delete?: VehicleWhereUniqueInput | VehicleWhereUniqueInput[]
-    connect?: VehicleWhereUniqueInput | VehicleWhereUniqueInput[]
-    update?: VehicleUpdateWithWhereUniqueWithoutTypeInput | VehicleUpdateWithWhereUniqueWithoutTypeInput[]
-    updateMany?: VehicleUpdateManyWithWhereWithoutTypeInput | VehicleUpdateManyWithWhereWithoutTypeInput[]
-    deleteMany?: VehicleScalarWhereInput | VehicleScalarWhereInput[]
+  export type CustomerUpdateOneWithoutDevicesNestedInput = {
+    create?: XOR<CustomerCreateWithoutDevicesInput, CustomerUncheckedCreateWithoutDevicesInput>
+    connectOrCreate?: CustomerCreateOrConnectWithoutDevicesInput
+    upsert?: CustomerUpsertWithoutDevicesInput
+    disconnect?: CustomerWhereInput | boolean
+    delete?: CustomerWhereInput | boolean
+    connect?: CustomerWhereUniqueInput
+    update?: XOR<XOR<CustomerUpdateToOneWithWhereWithoutDevicesInput, CustomerUpdateWithoutDevicesInput>, CustomerUncheckedUpdateWithoutDevicesInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -5130,135 +4038,167 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
-  export type VehicleTypeCreateWithoutVehiclesInput = {
+  export type CustomerDevicesCreateWithoutCustomerInput = {
     id?: string
-    name: string
+    token: string
+    deviceId: string
+    osType: string
+    osVersion: string
+    appVersion: string
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
   }
 
-  export type VehicleTypeUncheckedCreateWithoutVehiclesInput = {
+  export type CustomerDevicesUncheckedCreateWithoutCustomerInput = {
     id?: string
-    name: string
+    token: string
+    deviceId: string
+    osType: string
+    osVersion: string
+    appVersion: string
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
   }
 
-  export type VehicleTypeCreateOrConnectWithoutVehiclesInput = {
-    where: VehicleTypeWhereUniqueInput
-    create: XOR<VehicleTypeCreateWithoutVehiclesInput, VehicleTypeUncheckedCreateWithoutVehiclesInput>
+  export type CustomerDevicesCreateOrConnectWithoutCustomerInput = {
+    where: CustomerDevicesWhereUniqueInput
+    create: XOR<CustomerDevicesCreateWithoutCustomerInput, CustomerDevicesUncheckedCreateWithoutCustomerInput>
   }
 
-  export type VehicleTypeUpsertWithoutVehiclesInput = {
-    update: XOR<VehicleTypeUpdateWithoutVehiclesInput, VehicleTypeUncheckedUpdateWithoutVehiclesInput>
-    create: XOR<VehicleTypeCreateWithoutVehiclesInput, VehicleTypeUncheckedCreateWithoutVehiclesInput>
-    where?: VehicleTypeWhereInput
-  }
-
-  export type VehicleTypeUpdateToOneWithWhereWithoutVehiclesInput = {
-    where?: VehicleTypeWhereInput
-    data: XOR<VehicleTypeUpdateWithoutVehiclesInput, VehicleTypeUncheckedUpdateWithoutVehiclesInput>
-  }
-
-  export type VehicleTypeUpdateWithoutVehiclesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type VehicleTypeUncheckedUpdateWithoutVehiclesInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  }
-
-  export type VehicleCreateWithoutTypeInput = {
-    id?: string
-    licensePlate: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    deletedAt?: Date | string | null
-  }
-
-  export type VehicleUncheckedCreateWithoutTypeInput = {
-    id?: string
-    licensePlate: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    deletedAt?: Date | string | null
-  }
-
-  export type VehicleCreateOrConnectWithoutTypeInput = {
-    where: VehicleWhereUniqueInput
-    create: XOR<VehicleCreateWithoutTypeInput, VehicleUncheckedCreateWithoutTypeInput>
-  }
-
-  export type VehicleCreateManyTypeInputEnvelope = {
-    data: VehicleCreateManyTypeInput | VehicleCreateManyTypeInput[]
+  export type CustomerDevicesCreateManyCustomerInputEnvelope = {
+    data: CustomerDevicesCreateManyCustomerInput | CustomerDevicesCreateManyCustomerInput[]
     skipDuplicates?: boolean
   }
 
-  export type VehicleUpsertWithWhereUniqueWithoutTypeInput = {
-    where: VehicleWhereUniqueInput
-    update: XOR<VehicleUpdateWithoutTypeInput, VehicleUncheckedUpdateWithoutTypeInput>
-    create: XOR<VehicleCreateWithoutTypeInput, VehicleUncheckedCreateWithoutTypeInput>
+  export type CustomerDevicesUpsertWithWhereUniqueWithoutCustomerInput = {
+    where: CustomerDevicesWhereUniqueInput
+    update: XOR<CustomerDevicesUpdateWithoutCustomerInput, CustomerDevicesUncheckedUpdateWithoutCustomerInput>
+    create: XOR<CustomerDevicesCreateWithoutCustomerInput, CustomerDevicesUncheckedCreateWithoutCustomerInput>
   }
 
-  export type VehicleUpdateWithWhereUniqueWithoutTypeInput = {
-    where: VehicleWhereUniqueInput
-    data: XOR<VehicleUpdateWithoutTypeInput, VehicleUncheckedUpdateWithoutTypeInput>
+  export type CustomerDevicesUpdateWithWhereUniqueWithoutCustomerInput = {
+    where: CustomerDevicesWhereUniqueInput
+    data: XOR<CustomerDevicesUpdateWithoutCustomerInput, CustomerDevicesUncheckedUpdateWithoutCustomerInput>
   }
 
-  export type VehicleUpdateManyWithWhereWithoutTypeInput = {
-    where: VehicleScalarWhereInput
-    data: XOR<VehicleUpdateManyMutationInput, VehicleUncheckedUpdateManyWithoutTypeInput>
+  export type CustomerDevicesUpdateManyWithWhereWithoutCustomerInput = {
+    where: CustomerDevicesScalarWhereInput
+    data: XOR<CustomerDevicesUpdateManyMutationInput, CustomerDevicesUncheckedUpdateManyWithoutCustomerInput>
   }
 
-  export type VehicleScalarWhereInput = {
-    AND?: VehicleScalarWhereInput | VehicleScalarWhereInput[]
-    OR?: VehicleScalarWhereInput[]
-    NOT?: VehicleScalarWhereInput | VehicleScalarWhereInput[]
-    id?: StringFilter<"Vehicle"> | string
-    typeId?: StringFilter<"Vehicle"> | string
-    licensePlate?: StringFilter<"Vehicle"> | string
-    createdAt?: DateTimeFilter<"Vehicle"> | Date | string
-    updatedAt?: DateTimeFilter<"Vehicle"> | Date | string
-    deletedAt?: DateTimeNullableFilter<"Vehicle"> | Date | string | null
+  export type CustomerDevicesScalarWhereInput = {
+    AND?: CustomerDevicesScalarWhereInput | CustomerDevicesScalarWhereInput[]
+    OR?: CustomerDevicesScalarWhereInput[]
+    NOT?: CustomerDevicesScalarWhereInput | CustomerDevicesScalarWhereInput[]
+    id?: StringFilter<"CustomerDevices"> | string
+    customerId?: StringFilter<"CustomerDevices"> | string
+    token?: StringFilter<"CustomerDevices"> | string
+    deviceId?: StringFilter<"CustomerDevices"> | string
+    osType?: StringFilter<"CustomerDevices"> | string
+    osVersion?: StringFilter<"CustomerDevices"> | string
+    appVersion?: StringFilter<"CustomerDevices"> | string
+    createdAt?: DateTimeFilter<"CustomerDevices"> | Date | string
+    updatedAt?: DateTimeFilter<"CustomerDevices"> | Date | string
+    deletedAt?: DateTimeNullableFilter<"CustomerDevices"> | Date | string | null
   }
 
-  export type VehicleCreateManyTypeInput = {
+  export type CustomerCreateWithoutDevicesInput = {
     id?: string
-    licensePlate: string
+    email: string
+    name?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
   }
 
-  export type VehicleUpdateWithoutTypeInput = {
+  export type CustomerUncheckedCreateWithoutDevicesInput = {
+    id?: string
+    email: string
+    name?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    deletedAt?: Date | string | null
+  }
+
+  export type CustomerCreateOrConnectWithoutDevicesInput = {
+    where: CustomerWhereUniqueInput
+    create: XOR<CustomerCreateWithoutDevicesInput, CustomerUncheckedCreateWithoutDevicesInput>
+  }
+
+  export type CustomerUpsertWithoutDevicesInput = {
+    update: XOR<CustomerUpdateWithoutDevicesInput, CustomerUncheckedUpdateWithoutDevicesInput>
+    create: XOR<CustomerCreateWithoutDevicesInput, CustomerUncheckedCreateWithoutDevicesInput>
+    where?: CustomerWhereInput
+  }
+
+  export type CustomerUpdateToOneWithWhereWithoutDevicesInput = {
+    where?: CustomerWhereInput
+    data: XOR<CustomerUpdateWithoutDevicesInput, CustomerUncheckedUpdateWithoutDevicesInput>
+  }
+
+  export type CustomerUpdateWithoutDevicesInput = {
     id?: StringFieldUpdateOperationsInput | string
-    licensePlate?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
-  export type VehicleUncheckedUpdateWithoutTypeInput = {
+  export type CustomerUncheckedUpdateWithoutDevicesInput = {
     id?: StringFieldUpdateOperationsInput | string
-    licensePlate?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
-  export type VehicleUncheckedUpdateManyWithoutTypeInput = {
+  export type CustomerDevicesCreateManyCustomerInput = {
+    id?: string
+    token: string
+    deviceId: string
+    osType: string
+    osVersion: string
+    appVersion: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    deletedAt?: Date | string | null
+  }
+
+  export type CustomerDevicesUpdateWithoutCustomerInput = {
     id?: StringFieldUpdateOperationsInput | string
-    licensePlate?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    deviceId?: StringFieldUpdateOperationsInput | string
+    osType?: StringFieldUpdateOperationsInput | string
+    osVersion?: StringFieldUpdateOperationsInput | string
+    appVersion?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type CustomerDevicesUncheckedUpdateWithoutCustomerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    deviceId?: StringFieldUpdateOperationsInput | string
+    osType?: StringFieldUpdateOperationsInput | string
+    osVersion?: StringFieldUpdateOperationsInput | string
+    appVersion?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type CustomerDevicesUncheckedUpdateManyWithoutCustomerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    deviceId?: StringFieldUpdateOperationsInput | string
+    osType?: StringFieldUpdateOperationsInput | string
+    osVersion?: StringFieldUpdateOperationsInput | string
+    appVersion?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null

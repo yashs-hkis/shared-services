@@ -129,18 +129,14 @@ exports.Prisma.CustomerScalarFieldEnum = {
   deletedAt: 'deletedAt'
 };
 
-exports.Prisma.VehicleScalarFieldEnum = {
+exports.Prisma.CustomerDevicesScalarFieldEnum = {
   id: 'id',
-  typeId: 'typeId',
-  licensePlate: 'licensePlate',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt',
-  deletedAt: 'deletedAt'
-};
-
-exports.Prisma.VehicleTypeScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
+  customerId: 'customerId',
+  token: 'token',
+  deviceId: 'deviceId',
+  osType: 'osType',
+  osVersion: 'osVersion',
+  appVersion: 'appVersion',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   deletedAt: 'deletedAt'
@@ -164,8 +160,7 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   Customer: 'Customer',
-  Vehicle: 'Vehicle',
-  VehicleType: 'VehicleType'
+  CustomerDevices: 'CustomerDevices'
 };
 
 /**
