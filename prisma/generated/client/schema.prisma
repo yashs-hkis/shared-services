@@ -12,12 +12,13 @@ datasource db {
 
 // From user_schema
 model Customer {
-  id        String    @id @default(uuid())
-  email     String    @unique
-  name      String?
-  createdAt DateTime  @default(now()) @map("created_at")
-  updatedAt DateTime  @updatedAt @map("updated_at")
-  deletedAt DateTime? @map("deleted_at")
+  id           String    @id @default(uuid())
+  name         String?
+  email        String    @unique
+  mobileNumber String    @unique @map("mobile_number")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+  deletedAt    DateTime? @map("deleted_at")
 
   devices CustomerDevices[]
   otp     otps[]

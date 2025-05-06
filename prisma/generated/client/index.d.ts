@@ -1120,8 +1120,9 @@ export namespace Prisma {
 
   export type CustomerMinAggregateOutputType = {
     id: string | null
-    email: string | null
     name: string | null
+    email: string | null
+    mobileNumber: string | null
     createdAt: Date | null
     updatedAt: Date | null
     deletedAt: Date | null
@@ -1129,8 +1130,9 @@ export namespace Prisma {
 
   export type CustomerMaxAggregateOutputType = {
     id: string | null
-    email: string | null
     name: string | null
+    email: string | null
+    mobileNumber: string | null
     createdAt: Date | null
     updatedAt: Date | null
     deletedAt: Date | null
@@ -1138,8 +1140,9 @@ export namespace Prisma {
 
   export type CustomerCountAggregateOutputType = {
     id: number
-    email: number
     name: number
+    email: number
+    mobileNumber: number
     createdAt: number
     updatedAt: number
     deletedAt: number
@@ -1149,8 +1152,9 @@ export namespace Prisma {
 
   export type CustomerMinAggregateInputType = {
     id?: true
-    email?: true
     name?: true
+    email?: true
+    mobileNumber?: true
     createdAt?: true
     updatedAt?: true
     deletedAt?: true
@@ -1158,8 +1162,9 @@ export namespace Prisma {
 
   export type CustomerMaxAggregateInputType = {
     id?: true
-    email?: true
     name?: true
+    email?: true
+    mobileNumber?: true
     createdAt?: true
     updatedAt?: true
     deletedAt?: true
@@ -1167,8 +1172,9 @@ export namespace Prisma {
 
   export type CustomerCountAggregateInputType = {
     id?: true
-    email?: true
     name?: true
+    email?: true
+    mobileNumber?: true
     createdAt?: true
     updatedAt?: true
     deletedAt?: true
@@ -1249,8 +1255,9 @@ export namespace Prisma {
 
   export type CustomerGroupByOutputType = {
     id: string
-    email: string
     name: string | null
+    email: string
+    mobileNumber: string
     createdAt: Date
     updatedAt: Date
     deletedAt: Date | null
@@ -1275,8 +1282,9 @@ export namespace Prisma {
 
   export type CustomerSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    email?: boolean
     name?: boolean
+    email?: boolean
+    mobileNumber?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     deletedAt?: boolean
@@ -1287,8 +1295,9 @@ export namespace Prisma {
 
   export type CustomerSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    email?: boolean
     name?: boolean
+    email?: boolean
+    mobileNumber?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     deletedAt?: boolean
@@ -1296,8 +1305,9 @@ export namespace Prisma {
 
   export type CustomerSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    email?: boolean
     name?: boolean
+    email?: boolean
+    mobileNumber?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     deletedAt?: boolean
@@ -1305,14 +1315,15 @@ export namespace Prisma {
 
   export type CustomerSelectScalar = {
     id?: boolean
-    email?: boolean
     name?: boolean
+    email?: boolean
+    mobileNumber?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     deletedAt?: boolean
   }
 
-  export type CustomerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "name" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["customer"]>
+  export type CustomerOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "mobileNumber" | "createdAt" | "updatedAt" | "deletedAt", ExtArgs["result"]["customer"]>
   export type CustomerInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     devices?: boolean | Customer$devicesArgs<ExtArgs>
     otp?: boolean | Customer$otpArgs<ExtArgs>
@@ -1329,8 +1340,9 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      email: string
       name: string | null
+      email: string
+      mobileNumber: string
       createdAt: Date
       updatedAt: Date
       deletedAt: Date | null
@@ -1760,8 +1772,9 @@ export namespace Prisma {
    */
   interface CustomerFieldRefs {
     readonly id: FieldRef<"Customer", 'String'>
-    readonly email: FieldRef<"Customer", 'String'>
     readonly name: FieldRef<"Customer", 'String'>
+    readonly email: FieldRef<"Customer", 'String'>
+    readonly mobileNumber: FieldRef<"Customer", 'String'>
     readonly createdAt: FieldRef<"Customer", 'DateTime'>
     readonly updatedAt: FieldRef<"Customer", 'DateTime'>
     readonly deletedAt: FieldRef<"Customer", 'DateTime'>
@@ -4506,8 +4519,9 @@ export namespace Prisma {
 
   export const CustomerScalarFieldEnum: {
     id: 'id',
-    email: 'email',
     name: 'name',
+    email: 'email',
+    mobileNumber: 'mobileNumber',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
     deletedAt: 'deletedAt'
@@ -4647,8 +4661,9 @@ export namespace Prisma {
     OR?: CustomerWhereInput[]
     NOT?: CustomerWhereInput | CustomerWhereInput[]
     id?: StringFilter<"Customer"> | string
-    email?: StringFilter<"Customer"> | string
     name?: StringNullableFilter<"Customer"> | string | null
+    email?: StringFilter<"Customer"> | string
+    mobileNumber?: StringFilter<"Customer"> | string
     createdAt?: DateTimeFilter<"Customer"> | Date | string
     updatedAt?: DateTimeFilter<"Customer"> | Date | string
     deletedAt?: DateTimeNullableFilter<"Customer"> | Date | string | null
@@ -4658,8 +4673,9 @@ export namespace Prisma {
 
   export type CustomerOrderByWithRelationInput = {
     id?: SortOrder
-    email?: SortOrder
     name?: SortOrderInput | SortOrder
+    email?: SortOrder
+    mobileNumber?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     deletedAt?: SortOrderInput | SortOrder
@@ -4670,6 +4686,7 @@ export namespace Prisma {
   export type CustomerWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     email?: string
+    mobileNumber?: string
     AND?: CustomerWhereInput | CustomerWhereInput[]
     OR?: CustomerWhereInput[]
     NOT?: CustomerWhereInput | CustomerWhereInput[]
@@ -4679,12 +4696,13 @@ export namespace Prisma {
     deletedAt?: DateTimeNullableFilter<"Customer"> | Date | string | null
     devices?: CustomerDevicesListRelationFilter
     otp?: OtpsListRelationFilter
-  }, "id" | "email">
+  }, "id" | "email" | "mobileNumber">
 
   export type CustomerOrderByWithAggregationInput = {
     id?: SortOrder
-    email?: SortOrder
     name?: SortOrderInput | SortOrder
+    email?: SortOrder
+    mobileNumber?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     deletedAt?: SortOrderInput | SortOrder
@@ -4698,8 +4716,9 @@ export namespace Prisma {
     OR?: CustomerScalarWhereWithAggregatesInput[]
     NOT?: CustomerScalarWhereWithAggregatesInput | CustomerScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Customer"> | string
-    email?: StringWithAggregatesFilter<"Customer"> | string
     name?: StringNullableWithAggregatesFilter<"Customer"> | string | null
+    email?: StringWithAggregatesFilter<"Customer"> | string
+    mobileNumber?: StringWithAggregatesFilter<"Customer"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Customer"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Customer"> | Date | string
     deletedAt?: DateTimeNullableWithAggregatesFilter<"Customer"> | Date | string | null
@@ -4862,8 +4881,9 @@ export namespace Prisma {
 
   export type CustomerCreateInput = {
     id?: string
-    email: string
     name?: string | null
+    email: string
+    mobileNumber: string
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
@@ -4873,8 +4893,9 @@ export namespace Prisma {
 
   export type CustomerUncheckedCreateInput = {
     id?: string
-    email: string
     name?: string | null
+    email: string
+    mobileNumber: string
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
@@ -4884,8 +4905,9 @@ export namespace Prisma {
 
   export type CustomerUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    mobileNumber?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -4895,8 +4917,9 @@ export namespace Prisma {
 
   export type CustomerUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    mobileNumber?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -4906,8 +4929,9 @@ export namespace Prisma {
 
   export type CustomerCreateManyInput = {
     id?: string
-    email: string
     name?: string | null
+    email: string
+    mobileNumber: string
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
@@ -4915,8 +4939,9 @@ export namespace Prisma {
 
   export type CustomerUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    mobileNumber?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -4924,8 +4949,9 @@ export namespace Prisma {
 
   export type CustomerUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    mobileNumber?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -5183,8 +5209,9 @@ export namespace Prisma {
 
   export type CustomerCountOrderByAggregateInput = {
     id?: SortOrder
-    email?: SortOrder
     name?: SortOrder
+    email?: SortOrder
+    mobileNumber?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     deletedAt?: SortOrder
@@ -5192,8 +5219,9 @@ export namespace Prisma {
 
   export type CustomerMaxOrderByAggregateInput = {
     id?: SortOrder
-    email?: SortOrder
     name?: SortOrder
+    email?: SortOrder
+    mobileNumber?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     deletedAt?: SortOrder
@@ -5201,8 +5229,9 @@ export namespace Prisma {
 
   export type CustomerMinOrderByAggregateInput = {
     id?: SortOrder
-    email?: SortOrder
     name?: SortOrder
+    email?: SortOrder
+    mobileNumber?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     deletedAt?: SortOrder
@@ -5817,8 +5846,9 @@ export namespace Prisma {
 
   export type CustomerCreateWithoutDevicesInput = {
     id?: string
-    email: string
     name?: string | null
+    email: string
+    mobileNumber: string
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
@@ -5827,8 +5857,9 @@ export namespace Prisma {
 
   export type CustomerUncheckedCreateWithoutDevicesInput = {
     id?: string
-    email: string
     name?: string | null
+    email: string
+    mobileNumber: string
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
@@ -5853,8 +5884,9 @@ export namespace Prisma {
 
   export type CustomerUpdateWithoutDevicesInput = {
     id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    mobileNumber?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -5863,8 +5895,9 @@ export namespace Prisma {
 
   export type CustomerUncheckedUpdateWithoutDevicesInput = {
     id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    mobileNumber?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -5873,8 +5906,9 @@ export namespace Prisma {
 
   export type CustomerCreateWithoutOtpInput = {
     id?: string
-    email: string
     name?: string | null
+    email: string
+    mobileNumber: string
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
@@ -5883,8 +5917,9 @@ export namespace Prisma {
 
   export type CustomerUncheckedCreateWithoutOtpInput = {
     id?: string
-    email: string
     name?: string | null
+    email: string
+    mobileNumber: string
     createdAt?: Date | string
     updatedAt?: Date | string
     deletedAt?: Date | string | null
@@ -5909,8 +5944,9 @@ export namespace Prisma {
 
   export type CustomerUpdateWithoutOtpInput = {
     id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    mobileNumber?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -5919,8 +5955,9 @@ export namespace Prisma {
 
   export type CustomerUncheckedUpdateWithoutOtpInput = {
     id?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
+    email?: StringFieldUpdateOperationsInput | string
+    mobileNumber?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     deletedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
